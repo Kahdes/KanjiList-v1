@@ -1,6 +1,7 @@
 <?php
 
-require_once('Controller/Router.php');
+require_once('Framework/Router.php');
 
 $router = new Router();
-$router->request();
+//ETAPE 1
+$router->processRequest();

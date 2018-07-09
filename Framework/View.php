@@ -3,24 +3,28 @@
 class View {
 
 	private $file;
-	private $side;
 	private $title;
 	private $description;
 
-	public function __construct($action, $side) {
-		$this->side = $side;
-		$this->file = "View/" . $this->side . "/view" . $action . ".php";
+	public function __construct($action, $controller = "") {
+		$file = "View/";
+		if ($controller !== "") {
+			$file = $file . $controller . "/";
+		}
+		$this->file = $file . $action . ".php";
 	}
 
 	public function generate($data) {
 		$content = $this->generateFile($this->file, $data);
-		$vue = $this->generateFile('View/' . $this->side . '/template.php',
+		$root = Configuration::get('root', '/');
+		$view = $this->generateFile('View/template.php',
 		array(
 			'title' => $this->title,
 			'description' => $this->description,
-		 	'content' => $content
+		 	'content' => $content,
+		 	'root' => $root
 		));
-		echo $vue;
+		echo $view;
 	}
 
 	private function generateFile($file, $data) {
@@ -33,4 +37,9 @@ class View {
 		    throw new Exception("Fichier '$file' introuvable");
 		}
 	}
+
+	private function clearContent($value) {
+		return htmlspecialchars($value, ENT_QUOTES, 'utf-8', false);
+	}
+	
 }

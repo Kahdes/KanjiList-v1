@@ -4,7 +4,6 @@ class Configuration {
 
     private static $parameters;
 
-    // Renvoie la valeur d'un paramètre de configuration
     public static function get($name, $defaultValue = null) {
         if (isset(self::getParameters()[$name])) {
             $value = self::getParameters()[$name];
@@ -15,7 +14,6 @@ class Configuration {
             return $value;
     }
 
-    // Renvoie le tableau des paramètres en le chargeant au besoin
     private static function getParameters() {
         if (self::$parameters == null) {
             $filePath = "Config/prod.ini";
@@ -30,4 +28,5 @@ class Configuration {
         }
         return self::$parameters;
     }
+    
 }
