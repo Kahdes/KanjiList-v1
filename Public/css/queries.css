@@ -1,0 +1,13 @@
+@media all and (max-width: 767px) {
+	.card-header {
+		padding: 0 !important;
+	}
+}
+
+@media (max-width: 767px) {
+	.container {
+		margin: 0 !important;
+		width: 100% !important;
+		max-width: 100% !important;
+	}	
+}

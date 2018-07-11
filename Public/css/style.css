@@ -1,3 +1,25 @@
 /*-------------
 ----GENERAL----
 -------------*/
+
+body {
+	min-width: 320px !important;
+}
+
+hr {
+	margin: 10px 0;
+}
+
+.carousel-img {
+	width: 1140px;
+	height: 500px;
+}
+
+.kanji-card {
+	transition: all .3s;
+}
+
+.kanji-card:hover {
+	text-decoration: none;
+	background: rgb(69, 77, 84) !important;
+}

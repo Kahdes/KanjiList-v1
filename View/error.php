@@ -1,11 +1,10 @@
-<?php $this->title = $msg; ?>
+<?php $this->title = "Erreur"; ?>
 <?php $this->description = ""; ?>
 
 <section class="row" id="error">
-	<article class="alert alert-danger">
-		<h1 class="panel-heading"><?= $msg;?></h1>
-		<p class="panel-body">
-			<a class="btn btn-default" href="index.php">Retour à l'accueil -></a>
-		</p>
+	<article class="col-12 alert alert-danger" id="error-alert">
+		<h2>Erreur :</h4>
+		<p><?= $msg;?></p>
+		<a class="btn btn-primary" href="Home/index">Retour à l'accueil</a>
 	</article>
 </section>

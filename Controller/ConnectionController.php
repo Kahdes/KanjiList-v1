@@ -3,7 +3,7 @@
 require_once('Framework/Controller.php');
 require_once('Model/Kanji.php');
 
-class HomeController extends Controller {
+class ConnectionController extends Controller {
 
 	private $kanji;
 	
@@ -12,11 +12,7 @@ class HomeController extends Controller {
 	}
 
 	public function index() {
-		if ($this->kanji->getLastKanji()) {
-			$this->generateView(array(
-				'list' => $this->kanji->getLastKanji()
-			));
-		}		
+		$this->generateView(array());	
 	}
 
 }
