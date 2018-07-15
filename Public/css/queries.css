@@ -9,5 +9,18 @@
 		margin: 0 !important;
 		width: 100% !important;
 		max-width: 100% !important;
+	}
+
+	.alphabet-card:first-of-type {
+		margin-bottom: 24px !important;
+	}
+
+	#home-kanji .kanji-card > div {
+		padding: 12px 0 !important;
+	}
+}
+
+@media (max-width: 576px) {
+	#home-kanji .kanji-card > div {
 	}	
 }

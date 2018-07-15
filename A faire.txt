@@ -1,0 +1,26 @@
+Nouveau :
+	
+	=> Faire soit plus de colonnes pour classifier les kanjis dans une même table soit faire une table intermédiaire
+	=> Pages d'exercices (contenu aléatoire)
+	=> Images pour remplire les pages avec peu de contenu
+	=> Comptes utilisateurs
+	=> (Home) Bouton générer 9 nouveaux kanjis (href=index#home-kanji)
+
+Amélioration : 
+
+	=> Donner la possibiliter sur les pages de description de kanji de basculer sur d'autres kanji (genre
+	   prendre aléatoirement un kanji de difficulté égale)
+	=> Lien avec son du kanji
+	=> Cours SASS sur UDEMY pour modifier Bootstrap 4
+	=> Mieux gérer les kanjis identiques (faire une colonne de vérification de doublons à sens différents?)
+
+Outils : 
+
+	=> Variables de serveurs pour controler les actions répétitives
+
+--------------------------------------------------------------------------------
+
+Accueil :
+
+	=> Rajouter lien vidéo ?
+	=> SASS colonnes de cartes

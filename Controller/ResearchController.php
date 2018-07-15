@@ -17,10 +17,9 @@ class ResearchController extends Controller {
 
 	public function kanji() {
 		$id = $this->request->getParameter('id');
-		if ($this->kanji->getInfoKanji($id)) {
-			$title = $this->kanji->getKanji($id)->fetch();
+		if ($this->kanji->checkKanji($id)) {
 			$this->generateView(array(
-				'title' => $title,
+				'title' => $this->kanji->getInfoKanji($id)->fetch(),
 				'kanji' => $this->kanji->getInfoKanji($id)
 			));
 		} else {

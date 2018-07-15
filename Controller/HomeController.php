@@ -12,11 +12,9 @@ class HomeController extends Controller {
 	}
 
 	public function index() {
-		if ($this->kanji->getLastKanji()) {
-			$this->generateView(array(
-				'list' => $this->kanji->getLastKanji()
-			));
-		}		
+		$this->generateView(array(
+			'random' => $this->kanji->getRandomKanji()
+		));		
 	}
 
 }

@@ -1,4 +1,4 @@
-<div id="demo" class="row carousel slide" data-ride="carousel">
+<div id="demo" class="row carousel slide" data-ride="carousel" id="home-carousel">
 	<ul class="carousel-indicators">
 	    <li data-target="#demo" data-slide-to="0" class="active"></li>
 	    <li data-target="#demo" data-slide-to="1"></li>

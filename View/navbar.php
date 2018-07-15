@@ -10,7 +10,10 @@
 	    	<ul class="navbar-nav">
 	          	<li class="nav-item" id="Home">
 	           		<a class="nav-link" href="Home/index">Accueil</a>
-	         		</li>
+	         	</li>
+	         	<li class="nav-item" id="Alphabets">
+	            	<a class="nav-link" href="Alphabets/index">Alphabets</a>
+	          	</li>
 	          	<li class="nav-item" id="Research">
 	            	<a class="nav-link" href="Research/index">Recherche</a>
 	          	</li>

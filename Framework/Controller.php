@@ -33,7 +33,7 @@ abstract class Controller {
 	public abstract function index();
 
 	//ERREUR
-	private function error($message) {
+	protected function error($message) {
 		$view = new View('error');
 		$view->generate(array('msg' => $message));
 	}
