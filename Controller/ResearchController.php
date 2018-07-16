@@ -23,7 +23,7 @@ class ResearchController extends Controller {
 				'kanji' => $this->kanji->getInfoKanji($id)
 			));
 		} else {
-			$this->error("Ce kanji est inconnu.");
+			throw new Exception("Ce kanji est inconnu.");
 		}		
 	}
 

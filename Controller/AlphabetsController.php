@@ -19,11 +19,15 @@ class AlphabetsController extends Controller {
 	}
 
 	public function hiragana() {
-		$this->generateView(array());
+		$this->generateView(array(
+			'hiragana' => $this->hiragana->getAllHira()
+		));		
 	}
 
 	public function katakana() {
-		$this->generateView(array());
+		$this->generateView(array(
+			'katakana' => $this->katakana->getAllKata()
+		));
 	}
 
 }

@@ -27,4 +27,14 @@ class Katakana extends Model {
 		return $this->sqlRequest($sql);
 	}
 
+	//TEST EN COURS
+	public function getAllKata() {
+		$sql = '
+			SELECT *
+			FROM katakana
+		';
+
+		return $this->sqlRequest($sql);
+	}
+
 }

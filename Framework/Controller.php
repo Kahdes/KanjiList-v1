@@ -31,11 +31,5 @@ abstract class Controller {
 	}
 
 	public abstract function index();
-
-	//ERREUR
-	protected function error($message) {
-		$view = new View('error');
-		$view->generate(array('msg' => $message));
-	}
 		
 }

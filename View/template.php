@@ -31,9 +31,9 @@
     <?php require_once('header.php');?>   
     <?php require_once('navbar.php');?> 
     
-    <section class="container bg-light" id="main">
+    <div class="container bg-light" id="main">
         <?= $content; ?>    
-    </section>
+    </div>
 
     <?php require_once('footer.php');?> 
 
@@ -42,11 +42,10 @@
 
 
     <?php
-        if (isset($_GET['action']) && $_GET['action'] === 'kanji') {
+        if (isset($_GET['controller']) && $_GET['controller'] === 'Research') {
     ?>
-            <!--API-->
-            <script type="text/javascript" src="Public/js/ajax.js"></script>
-            <script type="text/javascript" src="Public/js/kanji.js"></script>
+            <!--RESEARCH-->
+            <script type="text/javascript" src="Public/js/research.js"></script>
     <?php
         }
     ?>

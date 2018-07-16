@@ -1,8 +1,8 @@
 <?php $this->title = "Kanji List : connexion"; ?>
 <?php $this->description = "Découvrez nos solutions pour vous aider à apprendre le japonais !";?>
 
-<section class="row" id="home">
-	<article class="col-12 col-sm-8 mx-auto pt-3 pb-4">
+<section class="row justify-content-center" id="home">
+	<article class="col-12 col-sm-8 py-4">
 		<form action="" method="post">
 			<div class="form-group">
 				<label class="lead" for="connect-id">Identifiant :</label>

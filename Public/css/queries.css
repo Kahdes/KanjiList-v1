@@ -15,7 +15,14 @@
 		margin-bottom: 24px !important;
 	}
 
-	#home-kanji .kanji-card > div {
+	#home-kanji-columns {
+  		@include media-breakpoint-up(sm) {
+    		column-count: 1;
+    		column-gap: 0;
+    	}
+	}
+
+	#home-kanji-columns .kanji-card > div {
 		padding: 12px 0 !important;
 	}
 }

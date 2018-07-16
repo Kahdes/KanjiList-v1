@@ -45,7 +45,7 @@ class Router {
 		return $action;
 	}
 
-	//ERREUR
+	//GESTION ERREUR
 	private function error($message) {
 		$view = new View('error');
 		$view->generate(array('msg' => $message));

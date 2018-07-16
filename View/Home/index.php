@@ -3,43 +3,48 @@
 
 <?php require_once('View/slider.php');?>
 
-<div class="row text-white bg-dark pt-4 pb-4" id="home-hira-kata">
-	<article class="col-12 text-center pb-2 mx-auto">
-		<h3 class="display-4">Les alphabets japonais</h3>
+<section class="row justify-content-center bg-dark pt-3 pb-4" id="home-title">
+	<article class="col-12 text-white text-center pb-2">
+		<h2 class="display-4">Les alphabets japonais</h3>
 		<hr/>
-		<p class="lead">Apprenez-en plus sur les différents alphabets japonais en consultant nos tableau récapitulatifs !</p>
+		<p class="lead">Apprenez-en plus sur les différents alphabets japonais en consultant nos tableaux récapitulatifs !</p>
 	</article>
 
-	<a href="Alphabets/hiragana" class="col-10 col-md-5 alphabet-card mx-auto p-0">
-		<div class="card bg-info text-center pt-3 pb-3 mx-auto">
-			<h4 class="text-white m-0">Hiragana</h4>
-		</div>
-	</a>
-	
-	<a href="Alphabets/katakana" class="col-10 col-md-5 alphabet-card mx-auto p-0">
-		<div class="card bg-info text-center pt-3 pb-3 mx-auto">
-			<h4 class="text-white m-0">Katakana</h4>
-		</div>
-	</a>	
-</div>
-
-<div class="row pt-3 pb-2" id="home-kanji">
-	<article class="col-12 bg-light">
-		<h3 class="col-12 text-center display-4">6 Kanji aléatoires : </h3>
-		<hr/>
+	<article class="col-12 col-md-5 text-center mb-4 mb-md-0">
+		<a href="Alphabets/hiragana" class="alphabet-card text-white" title="Vers la section Hiragana">
+			<div class="card bg-info py-3">
+				<h3 class="m-0">Hiragana</h4>
+			</div>
+		</a>
 	</article>
 
-	<div class="col-12 card-columns">
+	<article class="col-12 col-md-5 text-center">
+		<a class="alphabet-card text-white" href="Alphabets/katakana" title="Vers la section Katakana">
+			<div class="card bg-info py-3">
+				<h3 class="m-0">Katakana</h4>
+			</div>
+		</a>
+	</article>
+</section>
+
+<section class="row justify-content-center py-3" id="home-kanji">
+	<article class="col-12 text-center pb-2">
+		<h2 class="display-4">6 Kanji aléatoires : </h3>
+		<hr/>
+		<p class="lead">Cliquez sur un kanji afin de voir plus d'informations le concernant !</p>
+	</article>
+
+	<article class="col-12 card-columns" id="home-kanji-columns">
 <?php
 	foreach ($random as $r) {
 ?>
-		<a class="card bg-dark kanji-card" href="Research/kanji/<?=$r['id'];?>">
-			<div class="card-header text-center text-white">
-				<h4 class="card-title display-4 mb-0"><?=$r['kanji'];?></h4>
+		<a class="card bg-dark text-center text-white kanji-card" href="Research/kanji/<?=$r['id'];?>" title="Vers <?=$r['kanji'];?>">
+			<div class="card-header">
+				<h3 class="card-title display-4 m-0"><?=$r['kanji'];?></h4>
 			</div>
 		</a>
 <?php
 	}
 ?>
-	</div>
-</div>
+	</article>
+</section>

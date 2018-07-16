@@ -15,7 +15,7 @@ class Hiragana extends Model {
 		return $this->check($this->sqlRequest($sql, $params));
 	}
 
-	//TEST EN COURS
+	//REND 9 HIRAGANA ALEATOIRES
 	public function getRandomHira() {
 		$sql = '
 			SELECT SQL_NO_CACHE *
@@ -25,6 +25,27 @@ class Hiragana extends Model {
 		';
 
 		return $this->sqlRequest($sql);
+	}
+
+	//TEST EN COURS
+	public function getAllHira() {
+		$sql = '
+			SELECT *
+			FROM hiragana
+		';
+
+		return $this->sqlRequest($sql);
+	}
+
+	//TEST EN COURS
+	public function getFilteredHira($filter) {
+		$sql = '
+			SELECT *
+			FROM hiragana
+			WHERE v_group = ?
+		';
+		$params = array($filter);
+		return $this->sqlRequest($sql, $params);
 	}
 
 }

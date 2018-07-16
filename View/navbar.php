@@ -1,6 +1,6 @@
-<nav class="container-fluid bg-dark sticky-top">
+<nav class="container-fluid sticky-top bg-dark" id="navbar">
 	<div class="row navbar navbar-dark navbar-expand-sm">
-		<a class="navbar-brand" href="Home/index">漢字 Kanji</a>
+		<a class="navbar-brand" href="Home/index">漢字</a>
 
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 	    	<span class="navbar-toggler-icon"></span>

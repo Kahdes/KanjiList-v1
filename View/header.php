@@ -1,5 +1,5 @@
-<header class="container-fluid bg-warning">
-	<div class="row d-flex justify-content-center align-items-center pb-1" id="site-header">
-		<h2 class="display-3">Kanji List</h2>
+<header class="container-fluid bg-warning" id="header">
+	<div class="row justify-content-center pb-2">
+		<h1 class="display-3">Kanji List</h1>
 	</div>
 </header>

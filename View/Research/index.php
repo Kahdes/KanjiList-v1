@@ -1,28 +1,32 @@
 <?php $this->title = "Kanji List : recherche"; ?>
 <?php $this->description = "Découvrez nos solutions pour vous aider à apprendre le japonais !";?>
 
-<div class="row">
-	<div class="col-12 text-center pt-2 pb-2">
+<section class="row justify-content-center py-3" id="research-title">
+	<article class="col-12 text-center pb-2">
 		<h2 class="display-4">Options de recherche</h2>
-	</div>
-</div>
+		<hr/>
+		<p class="lead m-0">Choisissez une option de recherche puis renseignez votre demande</p>
+	</article>
+</section>
 
-<div class="row">
-	<article class="col-12 mx-auto">
-		<div class="col-8 pt-2 pb-2 text-center">
-			Recherche par <strong>Kanji</strong>
-		</div>
+<section class="row" id="research-opt">
+	<article class="col-12 pt-2 pb-4 mx-auto">
+		<div class="col-12 col-sm-8 text-center mx-auto">
+			<button class="btn btn-info btn-block" id="research-btn-kanji">
+				<strong>Kanji</strong>
+			</button>
 
-		<div class="col-8 pt-2 pb-2 text-center">
-			Recherche par <strong>Signification</strong>
-		</div>
+			<button class="btn btn-info btn-block" id="research-btn-meaning">
+				<strong>Signification</strong>
+			</button>
 
-		<div class="col-8 pt-2 pb-2 text-center">
-			Recherche par <strong>Lecture chinoise</strong>
-		</div>
+			<button class="btn btn-info btn-block" id="research-btn-chinese">
+				<strong>Lecture chinoise</strong>
+			</button>
 
-		<div class="col-8 pt-2 pb-2 text-center">
-			Recherche par <strong>Lecture japonaise</strong>
+			<button class="btn btn-info btn-block" id="research-btn-japanese">
+				<strong>Lecture japonaise</strong>
+			</button>						
 		</div>
 	</article>	
-</div>
+</section>

@@ -3,7 +3,7 @@
 -------------*/
 
 body {
-	min-width: 320px !important;
+	min-width: 303px !important;
 }
 
 a:link {
@@ -44,4 +44,27 @@ a:hover {
 	background: rgb(69, 77, 84) !important;
 }
 
-.kanji-card
+/*-------------------
+------ALPHABETS------
+-------------------*/
+
+#hiragana-table table td,
+#katakana-table table td {
+	width: 20%;
+}
+
+/*---------------
+------ERROR------
+---------------*/
+
+#error {
+	padding: 100px 0 !important;
+}
+
+/*----------------
+------FOOTER------
+----------------*/
+
+#footer {
+	padding: 10px 0 !important;
+}
