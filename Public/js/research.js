@@ -11,15 +11,12 @@ var Research = {
 		this.japaneseOpt = document.getElementById('research-btn-japanese');
 
 		this.kanjiOpt.addEventListener('click', function(e) {
-			console.log('OK');
 			e.preventDefault();
 		});
 		this.meaningOpt.addEventListener('click', function(e) {
-			console.log('OK');
 			e.preventDefault();
 		});
 		this.chineseOpt.addEventListener('click', function(e) {
-			console.log('OK');
 			e.preventDefault();
 		});
 		this.japaneseOpt.addEventListener('click', function(e) {
@@ -29,4 +26,4 @@ var Research = {
 	}
 };
 
-//Research.init();
+Research.init();

@@ -23,8 +23,7 @@
 				<tr>
 					<th colspan="5">
 						<h3 class="m-0">Table des Katakana</h3>
-					</th>
-					
+					</th>					
 				</tr>
 				<tr>
 					<th><h4>A</h4></td>

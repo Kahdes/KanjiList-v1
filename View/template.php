@@ -42,7 +42,7 @@
 
 
     <?php
-        if (isset($_GET['controller']) && $_GET['controller'] === 'Research') {
+        if (isset($_GET['controller']) && $_GET['controller'] === 'Reseach') {
     ?>
             <!--RESEARCH-->
             <script type="text/javascript" src="Public/js/research.js"></script>

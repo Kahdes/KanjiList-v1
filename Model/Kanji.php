@@ -15,6 +15,16 @@ class Kanji extends Model {
 		return $this->check($this->sqlRequest($sql, $params));
 	}
 
+	public function checkFilterKanji($filter) {
+		$sql = '
+			SELECT id
+			FROM kanji
+			WHERE kanji REGEXP ?
+		';
+		$params = array($filter);
+		return $this->check($this->sqlRequest($sql, $params));
+	}
+
 	//REND 9 KANJI ALEATOIRES
 	public function getRandomKanji() {
 		$sql = '
@@ -25,7 +35,18 @@ class Kanji extends Model {
 		';
 
 		return $this->sqlRequest($sql);
-	}	
+	}
+
+	//TEST EN COURS
+	public function getFilteredKanji($filter) {
+		$sql = '
+			SELECT *
+			FROM kanji
+			WHERE kanji REGEXP ?
+		';
+		$params = array($filter);
+		return $this->sqlRequest($sql, $params);
+	}
 
 	//REND LES INFOS COMPLETES D'UN KANJI
 	public function getInfoKanji($id) {

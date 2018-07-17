@@ -38,7 +38,7 @@
 <?php
 	foreach ($random as $r) {
 ?>
-		<a class="card bg-dark text-center text-white kanji-card" href="Research/kanji/<?=$r['id'];?>" title="Vers <?=$r['kanji'];?>">
+		<a class="card bg-dark text-center text-white kanji-card" href="Research/result/<?=$r['id'];?>" title="Vers <?=$r['kanji'];?>">
 			<div class="card-header">
 				<h3 class="card-title display-4 m-0"><?=$r['kanji'];?></h4>
 			</div>

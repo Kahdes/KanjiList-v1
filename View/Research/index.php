@@ -1,4 +1,4 @@
-<?php $this->title = "Kanji List : recherche"; ?>
+<?php $this->title = "Kanji List : options de recherche"; ?>
 <?php $this->description = "Découvrez nos solutions pour vous aider à apprendre le japonais !";?>
 
 <section class="row justify-content-center py-3" id="research-title">
@@ -11,22 +11,30 @@
 
 <section class="row" id="research-opt">
 	<article class="col-12 pt-2 pb-4 mx-auto">
-		<div class="col-12 col-sm-8 text-center mx-auto">
-			<button class="btn btn-info btn-block" id="research-btn-kanji">
-				<strong>Kanji</strong>
-			</button>
+		<div class="col-12 col-sm-10 col-md-8 text-center mx-auto">
+			<a href="Research/kanji" class="text-center text-dark">
+				<div class="card bg-warning py-3 m-0">
+					<h3 class="m-0">Kanji</h4>
+				</div>
+			</a>
 
-			<button class="btn btn-info btn-block" id="research-btn-meaning">
-				<strong>Signification</strong>
-			</button>
+			<a href="Research/onyomi" class="text-center text-dark">
+				<div class="card bg-warning py-3 m-0">
+					<h3 class="m-0">Lecture chinoise</h4>
+				</div>
+			</a>
 
-			<button class="btn btn-info btn-block" id="research-btn-chinese">
-				<strong>Lecture chinoise</strong>
-			</button>
+			<a href="Research/kunyomi" class="text-center text-dark">
+				<div class="card bg-warning py-3 m-0">
+					<h3 class="m-0">Lecture japonaise</h4>
+				</div>
+			</a>
 
-			<button class="btn btn-info btn-block" id="research-btn-japanese">
-				<strong>Lecture japonaise</strong>
-			</button>						
+			<a href="Research/meaning" class="text-center text-dark">
+				<div class="card bg-warning py-3 m-0">
+					<h3 class="m-0">Signification</h4>
+				</div>
+			</a>
 		</div>
 	</article>	
 </section>

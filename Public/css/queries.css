@@ -4,7 +4,7 @@
 	}
 }
 
-@media (max-width: 767px) {
+@media all and (max-width: 767px) {
 	.container {
 		margin: 0 !important;
 		width: 100% !important;
@@ -27,7 +27,13 @@
 	}
 }
 
-@media (max-width: 576px) {
+@media all and (max-width: 576px) {
 	#home-kanji .kanji-card > div {
 	}	
+}
+
+@media all and (max-width: 440px) {
+	#kanji-results article {
+		padding: 0 !important;
+	}
 }
