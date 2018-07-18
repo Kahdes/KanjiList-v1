@@ -33,7 +33,7 @@
 		<table class="table table-bordered table-striped table-hover m-0">
 			<thead class="thead-dark text-center">
 				<tr>
-					<th colspan="3"">
+					<th colspan="3">
 						<h3 class="m-0">Correspondances</h3>
 					</th>					
 				</tr>
@@ -49,15 +49,21 @@
 		foreach ($list as $l) {
 ?>
 			<tr>
-				<td>
+				<td class="pt-3">
 					<a href="Research/result/<?=$l['id'];?>">
-						<strong><?=$l['kanji']?></strong>
+						<h4><?=$l['kanji'];?></h4>
 					</a>
 				</td>
 
-				<td><?=$l['chinese']?>/<?=$l['japanese']?></td>
+				<td>
+					<?=$l['chinese'];?>
+					<br/>
+					<em><?=$l['japanese'];?></em>
+				</td>
 
-				<td><?=$l['meaning']?></td>
+				<td class="lead pt-3">
+					<?=ucfirst($l['meaning']);?>
+				</td>
 			</tr>
 <?php
 		}

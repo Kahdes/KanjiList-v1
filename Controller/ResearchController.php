@@ -18,6 +18,7 @@ class ResearchController extends Controller {
 	public function kanji() {
 		if ($this->request->isParameter('research-k')) {
 			$filter = $this->request->getParameter('research-k');
+			$col = 'kanji';
 			if ($this->kanji->checkFilterKanji($filter)) {
 				$this->generateView(array(
 					'list' => $this->kanji->getFilteredKanji($filter)
@@ -31,15 +32,48 @@ class ResearchController extends Controller {
 	}
 
 	public function meaning() {
-		$this->generateView(array());
+		if ($this->request->isParameter('research-m')) {
+			$filter = $this->request->getParameter('research-m');
+			if ($this->kanji->checkFilterMeaning($filter)) {
+				$this->generateView(array(
+					'list' => $this->kanji->getFilteredMeaning($filter)
+				));
+			} else {
+				$this->generateView(array());
+			}
+		} else {
+			$this->generateView(array());
+		}
 	}
 
 	public function onyomi() {
-		$this->generateView(array());
+		if ($this->request->isParameter('research-on')) {
+			$filter = $this->request->getParameter('research-on');
+			if ($this->kanji->checkFilterOn($filter)) {
+				$this->generateView(array(
+					'list' => $this->kanji->getFilteredOn($filter)
+				));
+			} else {
+				$this->generateView(array());
+			}
+		} else {
+			$this->generateView(array());
+		}
 	}
 
 	public function kunyomi() {
-		$this->generateView(array());
+		if ($this->request->isParameter('research-ku')) {
+			$filter = $this->request->getParameter('research-ku');
+			if ($this->kanji->checkFilterKun($filter)) {
+				$this->generateView(array(
+					'list' => $this->kanji->getFilteredKun($filter)
+				));
+			} else {
+				$this->generateView(array());
+			}
+		} else {
+			$this->generateView(array());
+		}
 	}
 
 	public function result() {	

@@ -5,6 +5,9 @@
 
 <?php
 	foreach ($kanji as $k) {
+		if (preg_match('/\(\d\)/', $k['kanji'])) {				
+			$k['kanji'] = preg_replace('/\(\d\)/', '', $k['kanji']);
+		}
 ?>
 	<article class="col-12 col-sm-10 col-md-6">
 		<div class="card card kanji-card bg-dark text-center text-white my-4">

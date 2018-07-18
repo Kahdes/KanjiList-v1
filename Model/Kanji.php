@@ -25,16 +25,34 @@ class Kanji extends Model {
 		return $this->check($this->sqlRequest($sql, $params));
 	}
 
-	//REND 9 KANJI ALEATOIRES
-	public function getRandomKanji() {
+	public function checkFilterMeaning($filter) {
 		$sql = '
-			SELECT SQL_NO_CACHE *
+			SELECT id
 			FROM kanji
-			ORDER BY RAND()
-			LIMIT 6
+			WHERE meaning REGEXP ?
 		';
+		$params = array($filter);
+		return $this->check($this->sqlRequest($sql, $params));
+	}
 
-		return $this->sqlRequest($sql);
+	public function checkFilterOn($filter) {
+		$sql = '
+			SELECT id
+			FROM kanji
+			WHERE chinese REGEXP ?
+		';
+		$params = array($filter);
+		return $this->check($this->sqlRequest($sql, $params));
+	}
+
+	public function checkFilterKun($filter) {
+		$sql = '
+			SELECT id
+			FROM kanji
+			WHERE japanese REGEXP ?
+		';
+		$params = array($filter);
+		return $this->check($this->sqlRequest($sql, $params));
 	}
 
 	//TEST EN COURS
@@ -46,6 +64,51 @@ class Kanji extends Model {
 		';
 		$params = array($filter);
 		return $this->sqlRequest($sql, $params);
+	}
+
+	//TEST EN COURS
+	public function getFilteredMeaning($filter) {
+		$sql = '
+			SELECT *
+			FROM kanji
+			WHERE meaning REGEXP ?
+		';
+		$params = array($filter);
+		return $this->sqlRequest($sql, $params);
+	}
+
+	//TEST EN COURS
+	public function getFilteredOn($filter) {
+		$sql = '
+			SELECT *
+			FROM kanji
+			WHERE chinese REGEXP ?
+		';
+		$params = array($filter);
+		return $this->sqlRequest($sql, $params);
+	}
+
+	//TEST EN COURS
+	public function getFilteredKun($filter) {
+		$sql = '
+			SELECT *
+			FROM kanji
+			WHERE japanese REGEXP ?
+		';
+		$params = array($filter);
+		return $this->sqlRequest($sql, $params);
+	}
+
+	//REND 9 KANJI ALEATOIRES
+	public function getRandomKanji() {
+		$sql = '
+			SELECT SQL_NO_CACHE *
+			FROM kanji
+			ORDER BY RAND()
+			LIMIT 6
+		';
+
+		return $this->sqlRequest($sql);
 	}
 
 	//REND LES INFOS COMPLETES D'UN KANJI

@@ -9,32 +9,30 @@
 	</article>
 </section>
 
-<section class="row" id="research-opt">
-	<article class="col-12 pt-2 pb-4 mx-auto">
-		<div class="col-12 col-sm-10 col-md-8 text-center mx-auto">
-			<a href="Research/kanji" class="text-center text-dark">
-				<div class="card bg-warning py-3 m-0">
-					<h3 class="m-0">Kanji</h4>
-				</div>
-			</a>
+<section class="row justify-content-center pb-3" id="research-opt">
+	<article class="col-12 col-sm-10 col-md-8">
+		<a href="Research/kanji" class="text-center text-dark">
+			<div class="card bg-warning py-3 mb-3">
+				<h3 class="m-0">Kanji</h4>
+			</div>
+		</a>
 
-			<a href="Research/onyomi" class="text-center text-dark">
-				<div class="card bg-warning py-3 m-0">
-					<h3 class="m-0">Lecture chinoise</h4>
-				</div>
-			</a>
+		<a href="Research/onyomi" class="text-center text-dark">
+			<div class="card bg-warning py-3 mb-3">
+				<h3 class="m-0">Lecture chinoise</h4>
+			</div>
+		</a>
 
-			<a href="Research/kunyomi" class="text-center text-dark">
-				<div class="card bg-warning py-3 m-0">
-					<h3 class="m-0">Lecture japonaise</h4>
-				</div>
-			</a>
+		<a href="Research/kunyomi" class="text-center text-dark">
+			<div class="card bg-warning py-3 mb-3">
+				<h3 class="m-0">Lecture japonaise</h4>
+			</div>
+		</a>
 
-			<a href="Research/meaning" class="text-center text-dark">
-				<div class="card bg-warning py-3 m-0">
-					<h3 class="m-0">Signification</h4>
-				</div>
-			</a>
-		</div>
+		<a href="Research/meaning" class="text-center text-dark">
+			<div class="card bg-warning py-3 m-0">
+				<h3 class="m-0">Signification</h4>
+			</div>
+		</a>
 	</article>	
 </section>

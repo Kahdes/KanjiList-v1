@@ -32,8 +32,11 @@
 	}	
 }
 
-@media all and (max-width: 440px) {
-	#kanji-results article {
+@media all and (max-width: 500px) {
+	#kanji-results article,
+	#onyomi-results article,
+	#kunyomi-results article,
+	#meaning-results article {
 		padding: 0 !important;
 	}
 }

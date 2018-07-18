@@ -57,7 +57,9 @@ a:hover {
 ------RESEARCH------
 ------------------*/
 
-
+.word-break {
+	word-break: break-all !important;
+}
 
 /*---------------
 ------ERROR------
