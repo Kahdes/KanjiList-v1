@@ -48,8 +48,7 @@ a:hover {
 ------ALPHABETS------
 -------------------*/
 
-#hiragana-table table td,
-#katakana-table table td {
+#alphabet-table table td {
 	width: 20%;
 }
 

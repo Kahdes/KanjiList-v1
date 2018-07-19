@@ -77,15 +77,25 @@ class ResearchController extends Controller {
 	}
 
 	public function result() {	
-		$id = $this->request->getParameter('id');
-		if ($this->kanji->checkKanji($id)) {
-			$this->generateView(array(
-				'title' => $this->kanji->getInfoKanji($id)->fetch(),
-				'kanji' => $this->kanji->getInfoKanji($id)
-			));
+		if ($this->request->isParameter('id')) {
+			$id = $this->request->getParameter('id');
+			if ($this->kanji->checkKanji($id)) {
+				$filter = $this->kanji->getInfoKanji($id)->fetch();
+				if (preg_match('/(\(\d\))/', $filter['kanji'])) {
+					$filter['kanji'] = preg_replace('/\(\d\)/', '', $filter['kanji']);
+				}
+				$this->generateView(array(
+					'title' => $this->kanji->getInfoKanji($id)->fetch(),
+					'kanji' => $this->kanji->getInfoKanji($id),
+					'affiliate' => $this->kanji->getFilteredKanji($filter['kanji'])
+				));
+			} else {
+				throw new Exception();				
+			}
 		} else {
-			throw new Exception("Ce kanji est inconnu.");
-		}	
+			throw new Exception();
+		}
+		
 	}
 
 }

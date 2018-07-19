@@ -28,29 +28,43 @@
 
 <body>
 
-    <?php require_once('header.php');?>   
-    <?php require_once('navbar.php');?> 
+<?php require_once('Shared/header.php');?>   
+<?php require_once('Shared/navbar.php');?> 
     
     <div class="container bg-light" id="main">
-        <?= $content; ?>    
+        <?= $content; ?>
     </div>
 
-    <?php require_once('footer.php');?> 
+<?php require_once('Shared/footer.php');?> 
 
     <!--NAVBAR-->
     <script type="text/javascript" src="Public/js/navbar.js"></script>
 
-
-    <?php
-        if (isset($_GET['controller']) && $_GET['controller'] === 'Reseach') {
-    ?>
-            <!--RESEARCH-->
-            <script type="text/javascript" src="Public/js/research.js"></script>
-    <?php
+<?php
+    if (isset($_GET['controller']) && $_GET['controller'] === 'Research') {
+        if (isset($_GET['action'])) {
+            $regex = '/(kanji|onyomi|kunyomi|meaning)/';
+            if (preg_match($regex, $_GET['action'])) { 
+?>
+    <!--RESEARCH-->
+    <script type="text/javascript" src="Public/js/research.js"></script>
+<?php
+            }
         }
-    ?>
-    
+    }
 
+    if (isset($_GET['controller']) && $_GET['controller'] === 'Research') {
+        if (isset($_GET['action']) && $_GET['action'] === 'result') {
+?>
+    <!--RESULT-->
+    <script type="text/javascript" src="Public/js/ajax.js"></script>
+    <script type="text/javascript" src="Public/js/result.js"></script>
+<?php
+        }
+    }
+?>
+
+    <!--JQUERY-->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

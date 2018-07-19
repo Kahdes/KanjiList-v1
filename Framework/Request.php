@@ -6,6 +6,7 @@ class Request {
 
 	public function __construct($parameters) {
 		$this->parameters = $parameters;
+		//var_dump($parameters);
 	}
 
 	public function isParameter($name) {

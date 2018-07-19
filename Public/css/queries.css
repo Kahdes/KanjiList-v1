@@ -1,20 +1,25 @@
 @media all and (max-width: 767px) {
+	/*-------------
+	----GENERAL----
+	-------------*/
 	.card-header {
 		padding: 0 !important;
 	}
 }
 
 @media all and (max-width: 767px) {
+	/*-------------
+	----GENERAL----
+	-------------*/
 	.container {
 		margin: 0 !important;
 		width: 100% !important;
 		max-width: 100% !important;
 	}
 
-	.alphabet-card:first-of-type {
-		margin-bottom: 24px !important;
-	}
-
+	/*----------
+	----HOME----
+	----------*/
 	#home-kanji-columns {
   		@include media-breakpoint-up(sm) {
     		column-count: 1;
@@ -25,18 +30,20 @@
 	#home-kanji-columns .kanji-card > div {
 		padding: 12px 0 !important;
 	}
-}
 
-@media all and (max-width: 576px) {
-	#home-kanji .kanji-card > div {
+	/*---------------
+	----ALPHABETS----
+	---------------*/
+	.alphabet-card:first-of-type {
+		margin-bottom: 24px !important;
 	}	
 }
 
 @media all and (max-width: 500px) {
-	#kanji-results article,
-	#onyomi-results article,
-	#kunyomi-results article,
-	#meaning-results article {
+	/*--------------
+	----RESEARCH----
+	--------------*/
+	#results article {
 		padding: 0 !important;
 	}
 }

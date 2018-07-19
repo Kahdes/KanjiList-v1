@@ -1,27 +1,34 @@
 var Research = {
-	kanjiOpt: null,
-	meaningOpt: null,
-	chineseOpt: null,
-	japaneseOpt: null,
+	status: null,
+	formElt: null,
+	sectionElt: null,
 
 	init() {
-		this.kanjiOpt = document.getElementById('research-btn-kanji');
-		this.meaningOpt = document.getElementById('research-btn-meaning');
-		this.chineseOpt = document.getElementById('research-btn-chinese');
-		this.japaneseOpt = document.getElementById('research-btn-japanese');
+		this.formElt = document.getElementsByClassName('form');
 
-		this.kanjiOpt.addEventListener('click', function(e) {
-			e.preventDefault();
-		});
-		this.meaningOpt.addEventListener('click', function(e) {
-			e.preventDefault();
-		});
-		this.chineseOpt.addEventListener('click', function(e) {
-			e.preventDefault();
-		});
-		this.japaneseOpt.addEventListener('click', function(e) {
-			console.log('OK');
-			e.preventDefault();
+		let id = this.formElt[0].id; 
+		let handle = (id === 'kanji-form');
+
+		this.analyze(handle);
+	},
+
+	analyze(handle) {
+		var section = this.sectionElt;
+		this.formElt[0].addEventListener('submit', function(e) {
+			a =	section;
+			var inputValue = document.getElementsByClassName('research')[0].value;
+
+			if (handle) {
+				var regex = /^([一-龯]){1,}$/;
+			} else {
+				var regex = /^([a-zA-Z]){1,}$/i;					
+			}
+
+			if (regex.test(inputValue)) {				
+				return true;
+			} else {
+				e.preventDefault();
+			}
 		});
 	}
 };

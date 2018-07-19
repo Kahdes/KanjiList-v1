@@ -4,7 +4,9 @@ require_once('Framework/Model.php');
 
 class Katakana extends Model {
 
-	//CHECK KATAKANA EXISTANT
+//CHECK
+
+	//TEST KATAKANA EXISTANT
 	public function checkKata($id) {
 		$sql = '
 			SELECT id
@@ -15,7 +17,20 @@ class Katakana extends Model {
 		return $this->check($this->sqlRequest($sql, $params));
 	}
 
-	//TEST EN COURS
+//BASIC GET
+
+	//REND TOUS LES KATAKANA
+	public function getAllKata() {
+		$sql = '
+			SELECT *
+			FROM katakana
+		';
+
+		return $this->sqlRequest($sql);
+	}
+
+	/*
+	//REND 9 HIRAGANA ALEATOIRES
 	public function getRandomKata() {
 		$sql = '
 			SELECT SQL_NO_CACHE *
@@ -26,15 +41,6 @@ class Katakana extends Model {
 
 		return $this->sqlRequest($sql);
 	}
-
-	//TEST EN COURS
-	public function getAllKata() {
-		$sql = '
-			SELECT *
-			FROM katakana
-		';
-
-		return $this->sqlRequest($sql);
-	}
-
+	*/
+	
 }

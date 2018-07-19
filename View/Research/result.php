@@ -1,18 +1,36 @@
 <?php $this->title = "Kanji List : " . $title['kanji']; ?>
 <?php $this->description = "Découvrez nos solutions pour vous aider à apprendre le japonais !";?>
 
-<section class="row justify-content-center" id="kanji-info">
+<section class="row justify-content-center py-3" id="result-title">
+	<article class="col-12 text-center">
+		<h2 class="display-4">Résultat de recherche</h2>
+		<hr class="mb-0" />
+	</article>
+</section>
 
+<section class="row justify-content-center py-3" id="result-info">
 <?php
 	foreach ($kanji as $k) {
-		if (preg_match('/\(\d\)/', $k['kanji'])) {				
+		if (preg_match('/(\(\d\))/', $k['kanji'])) {
+			$version = preg_split('/^([一-龯]){1,}/', $k['kanji']);
 			$k['kanji'] = preg_replace('/\(\d\)/', '', $k['kanji']);
 		}
 ?>
 	<article class="col-12 col-sm-10 col-md-6">
-		<div class="card card kanji-card bg-dark text-center text-white my-4">
+		<div class="card card kanji-card bg-dark text-center text-white">
 			<div class="card-head">
-				<h2 class="display-3" id="research-kanji"><?=$k['kanji'];?></h2>
+				<h2 class="display-3" id="result-kanji">
+					<?=$k['kanji'];?>
+				</h2>
+<?php
+	if (isset($version)) {
+?>
+				<p>
+					<small><?=$version[1];?></small>
+				</p>
+<?php
+	}
+?>				
 			</div>
 
 			<hr class="m-0"/>
@@ -32,5 +50,4 @@
 <?php
 	}
 ?>
-
 </section>

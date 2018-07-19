@@ -4,7 +4,9 @@ require_once('Framework/Model.php');
 
 class Hiragana extends Model {
 
-	//CHECK HIRAGANA EXISTANT
+//CHECK
+
+	//TEST HIRAGANA EXISTANT
 	public function checkHira($id) {
 		$sql = '
 			SELECT id
@@ -15,6 +17,34 @@ class Hiragana extends Model {
 		return $this->check($this->sqlRequest($sql, $params));
 	}
 
+//FILTERED GET
+
+	/*
+	//CONDITIONNEMENT PAR GROUPE VOYELLE
+	public function getFilteredHira($filter) {
+		$sql = '
+			SELECT *
+			FROM hiragana
+			WHERE v_group = ?
+		';
+		$params = array($filter);
+		return $this->sqlRequest($sql, $params);
+	}
+	*/
+
+//BASIC GET
+
+	//REND TOUS LES HIRAGANA
+	public function getAllHira() {
+		$sql = '
+			SELECT *
+			FROM hiragana
+		';
+
+		return $this->sqlRequest($sql);
+	}
+
+	/*
 	//REND 9 HIRAGANA ALEATOIRES
 	public function getRandomHira() {
 		$sql = '
@@ -26,26 +56,6 @@ class Hiragana extends Model {
 
 		return $this->sqlRequest($sql);
 	}
-
-	//TEST EN COURS
-	public function getAllHira() {
-		$sql = '
-			SELECT *
-			FROM hiragana
-		';
-
-		return $this->sqlRequest($sql);
-	}
-
-	//TEST EN COURS
-	public function getFilteredHira($filter) {
-		$sql = '
-			SELECT *
-			FROM hiragana
-			WHERE v_group = ?
-		';
-		$params = array($filter);
-		return $this->sqlRequest($sql, $params);
-	}
+	*/		
 
 }

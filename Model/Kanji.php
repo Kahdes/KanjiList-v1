@@ -4,7 +4,9 @@ require_once('Framework/Model.php');
 
 class Kanji extends Model {
 
-	//CHECK KANJI EXISTANT
+//CHECK
+
+	//TEST SI UN KANJI EXISTE
 	public function checkKanji($id) {
 		$sql = '
 			SELECT id
@@ -15,6 +17,7 @@ class Kanji extends Model {
 		return $this->check($this->sqlRequest($sql, $params));
 	}
 
+	//COMPARAISON SUR KANJI
 	public function checkFilterKanji($filter) {
 		$sql = '
 			SELECT id
@@ -25,6 +28,7 @@ class Kanji extends Model {
 		return $this->check($this->sqlRequest($sql, $params));
 	}
 
+	//COMPARAISON SUR SIGNIFICATION
 	public function checkFilterMeaning($filter) {
 		$sql = '
 			SELECT id
@@ -35,6 +39,7 @@ class Kanji extends Model {
 		return $this->check($this->sqlRequest($sql, $params));
 	}
 
+	//COMPARAISON SUR LECTURE CHINOISE
 	public function checkFilterOn($filter) {
 		$sql = '
 			SELECT id
@@ -45,6 +50,7 @@ class Kanji extends Model {
 		return $this->check($this->sqlRequest($sql, $params));
 	}
 
+	//COMPARAISON SUR LECTURE JAPONAISE
 	public function checkFilterKun($filter) {
 		$sql = '
 			SELECT id
@@ -55,7 +61,9 @@ class Kanji extends Model {
 		return $this->check($this->sqlRequest($sql, $params));
 	}
 
-	//TEST EN COURS
+//FILTERED GET 
+
+	//CONDITIONNEMENT PAR KANJI
 	public function getFilteredKanji($filter) {
 		$sql = '
 			SELECT *
@@ -66,7 +74,7 @@ class Kanji extends Model {
 		return $this->sqlRequest($sql, $params);
 	}
 
-	//TEST EN COURS
+	//CONDITIONNEMENT PAR SIGNIFICATION
 	public function getFilteredMeaning($filter) {
 		$sql = '
 			SELECT *
@@ -77,7 +85,7 @@ class Kanji extends Model {
 		return $this->sqlRequest($sql, $params);
 	}
 
-	//TEST EN COURS
+	//CONDITIONNEMENT PAR LECTURE CHINOISE
 	public function getFilteredOn($filter) {
 		$sql = '
 			SELECT *
@@ -88,7 +96,7 @@ class Kanji extends Model {
 		return $this->sqlRequest($sql, $params);
 	}
 
-	//TEST EN COURS
+	//CONDITIONNEMENT PAR LECTURE JAPONAISE
 	public function getFilteredKun($filter) {
 		$sql = '
 			SELECT *
@@ -98,6 +106,8 @@ class Kanji extends Model {
 		$params = array($filter);
 		return $this->sqlRequest($sql, $params);
 	}
+
+//BASIC GET 
 
 	//REND 9 KANJI ALEATOIRES
 	public function getRandomKanji() {
@@ -136,6 +146,7 @@ class Kanji extends Model {
 	}
 
 	/*
+	//A VOIR POUR UN COMPTE SUR LE SITE
 	public function getLastKanji() {
 		$sql = '
 			SELECT *
