@@ -1,4 +1,7 @@
 <section class="row justify-content-center py-3" id="results">
+<?php
+	if (isset($list)) {
+?>
 	<article class="col-12 col-sm-10 text-center table-responsive-sm">
 		<table class="table table-bordered table-striped table-hover m-0">
 			<thead class="thead-dark text-center">
@@ -15,8 +18,10 @@
 			</thead>
 
 			<tbody class="bg-light text-center">
+
 <?php
-		foreach ($list as $l) {
+	
+	foreach ($list as $l) {
 ?>
 			<tr>
 				<td class="pt-3">
@@ -38,7 +43,16 @@
 <?php
 		}
 ?>
-			</tbody>
+		</tbody>
 		</table>
 	</article>
-</section>
+<?php
+	} elseif (isset($result)) {
+?>
+	<article class="class="col-12 col-sm-10 text-center">
+		<h2><?=$result;?></h2>
+	</article>
+<?php
+	}
+?>
+</section>	

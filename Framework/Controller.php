@@ -30,6 +30,13 @@ abstract class Controller {
 		$view->generate($dataView);
 	}
 
+	protected function redirect($controller, $action = null) {
+        $root = Configuration::get('root', '/');
+        header('Location:' . $root . $controller . '/' . $action);
+    }
+	
 	public abstract function index();
+
+	//public abstract function error($title, $msg);
 		
 }

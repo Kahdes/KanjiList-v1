@@ -14,10 +14,12 @@ class AlphabetsController extends Controller {
 		$this->katakana = new Katakana();
 	}
 
+//ACTIONS
+
 	public function index() {
 		$this->generateView(array());
 	}
-
+	
 	public function hiragana() {
 		$this->generateView(array(
 			'letters' => $this->hiragana->getAllHira()

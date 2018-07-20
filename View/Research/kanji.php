@@ -19,13 +19,13 @@
 					</div>
 				<input class="form-control form-control-lg research" type="text" name="research-k" id="research-k" placeholder="Ex : 金" required />
 			</div>
-			<button class="form-control form-control-lg btn btn-lg btn-warning" type="submit">Rechercher</button>
+			<button class="form-control form-control-lg btn btn-lg btn-warning sub" type="submit">Rechercher</button>
 		</form>
 	</article>	
 </section>
 
 <?php
-	if (isset($list)) {
+	if (isset($list) || isset($result)) {
 		require_once('Shared/research_match.php');
 	}
 ?>

@@ -11,6 +11,8 @@ class HomeController extends Controller {
 		$this->kanji = new Kanji();
 	}
 
+//ACTIONS
+
 	public function index() {
 		$this->generateView(array(
 			'random' => $this->kanji->getRandomKanji()

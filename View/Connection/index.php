@@ -5,7 +5,7 @@
 	<article class="col-12 col-md-5 py-4">
 		<h2 class="display-4">Inscription</h2>
 		<hr/>
-		<form action="Connection" method="post">
+		<form action="Connection/index" method="post">
 			<div class="form-group">
 				<label class="lead" for="sign-id">Identifiant :</label>
 				<input class="form-control" type="text" name="sign-id" id="sign-id" required />
@@ -21,7 +21,7 @@
 	<article class="col-12 col-md-5 py-4">
 		<h2 class="display-4">Connexion</h2>
 		<hr/>	
-		<form action="Connection" method="post">			
+		<form action="Connection/connect" method="post">			
 			<div class="form-group">
 				<label class="lead" for="connect-id">Identifiant :</label>
 				<input class="form-control" type="text" name="connect-id" id="connect-id" required />

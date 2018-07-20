@@ -1,12 +1,20 @@
+
 <?php
+
+require_once('Session.php');
 
 class Request {
 
 	private $parameters;
+	private $session;
 
 	public function __construct($parameters) {
 		$this->parameters = $parameters;
-		//var_dump($parameters);
+		$this->session = new Session();
+	}
+
+	public function getSession() {
+		return $this->session;
 	}
 
 	public function isParameter($name) {

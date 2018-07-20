@@ -11,6 +11,8 @@ class ResearchController extends Controller {
 		$this->kanji = new Kanji();
 	}
 
+//ACTIONS
+
 	public function index() {
 		$this->generateView(array());	
 	}
@@ -18,29 +20,16 @@ class ResearchController extends Controller {
 	public function kanji() {
 		if ($this->request->isParameter('research-k')) {
 			$filter = $this->request->getParameter('research-k');
-			$col = 'kanji';
-			if ($this->kanji->checkFilterKanji($filter)) {
-				$this->generateView(array(
-					'list' => $this->kanji->getFilteredKanji($filter)
-				));
-			} else {
-				$this->generateView(array());
-			}
+			$this->filter($filter, 'Kanji');
 		} else {
 			$this->generateView(array());
-		}		
+		}
 	}
 
 	public function meaning() {
 		if ($this->request->isParameter('research-m')) {
 			$filter = $this->request->getParameter('research-m');
-			if ($this->kanji->checkFilterMeaning($filter)) {
-				$this->generateView(array(
-					'list' => $this->kanji->getFilteredMeaning($filter)
-				));
-			} else {
-				$this->generateView(array());
-			}
+			$this->filter($filter, 'Meaning');
 		} else {
 			$this->generateView(array());
 		}
@@ -49,13 +38,7 @@ class ResearchController extends Controller {
 	public function onyomi() {
 		if ($this->request->isParameter('research-on')) {
 			$filter = $this->request->getParameter('research-on');
-			if ($this->kanji->checkFilterOn($filter)) {
-				$this->generateView(array(
-					'list' => $this->kanji->getFilteredOn($filter)
-				));
-			} else {
-				$this->generateView(array());
-			}
+			$this->filter($filter, 'On');
 		} else {
 			$this->generateView(array());
 		}
@@ -64,13 +47,7 @@ class ResearchController extends Controller {
 	public function kunyomi() {
 		if ($this->request->isParameter('research-ku')) {
 			$filter = $this->request->getParameter('research-ku');
-			if ($this->kanji->checkFilterKun($filter)) {
-				$this->generateView(array(
-					'list' => $this->kanji->getFilteredKun($filter)
-				));
-			} else {
-				$this->generateView(array());
-			}
+			$this->filter($filter, 'Kun');
 		} else {
 			$this->generateView(array());
 		}
@@ -94,8 +71,23 @@ class ResearchController extends Controller {
 			}
 		} else {
 			throw new Exception();
+		}		
+	}
+
+//METHODES SPECIFIQUES
+
+	private function filter($filter, $method) {
+		$f_method = "checkFilter$method";
+		$g_method = "getFiltered$method";
+		if ($this->kanji->$f_method($filter)) {
+			$this->generateView(array(
+				'list' => $this->kanji->$g_method($filter)
+			));
+		} else {
+			$this->generateView(array(
+				'result' => 'Aucun résultat'
+			));
 		}
-		
 	}
 
 }

@@ -1,35 +1,47 @@
 var Research = {
-	status: null,
 	formElt: null,
-	sectionElt: null,
+	inputElt: null,
 
 	init() {
-		this.formElt = document.getElementsByClassName('form');
+		this.formElt = document.getElementsByClassName('form')[0];
+		this.inputElt = document.getElementsByClassName('research')[0];
 
-		let id = this.formElt[0].id; 
+		let id = this.formElt.id; 
 		let handle = (id === 'kanji-form');
 
 		this.analyze(handle);
 	},
 
 	analyze(handle) {
-		var section = this.sectionElt;
-		this.formElt[0].addEventListener('submit', function(e) {
-			a =	section;
-			var inputValue = document.getElementsByClassName('research')[0].value;
+		let formElt = this.formElt;
+		let inputElt = this.inputElt;
+		let status = 0;
 
+		inputElt.addEventListener('blur', function(e) {
+			let inputValue = inputElt.value;
 			if (handle) {
 				var regex = /^([一-龯]){1,}$/;
 			} else {
-				var regex = /^([a-zA-Z]){1,}$/i;					
+				var regex = /^([\D]){1}([\D\/\[\]\s]){0,}$/i;					
 			}
 
-			if (regex.test(inputValue)) {				
-				return true;
-			} else {
-				e.preventDefault();
+			if (regex.test(inputValue) || inputValue === "") {
+				if (inputElt.classList.contains('custom-danger')) {
+					inputElt.classList.remove('custom-danger');
+				}
+				status = 1;
+			} else if (!regex.test(inputValue)) {
+				status = 0;				
+				inputElt.classList.add('custom-danger');
 			}
+
+			formElt.addEventListener('submit', function(e) {
+				if (status !== 1) {
+					e.preventDefault();
+				}
+			})
 		});
+		
 	}
 };
 
