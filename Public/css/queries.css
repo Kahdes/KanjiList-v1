@@ -2,35 +2,12 @@
 	/*-------------
 	----GENERAL----
 	-------------*/
-	.card-header {
-		padding: 0 !important;
-	}
-}
-
-@media all and (max-width: 767px) {
-	/*-------------
-	----GENERAL----
-	-------------*/
 	.container {
 		margin: 0 !important;
 		width: 100% !important;
 		max-width: 100% !important;
 	}
-
-	/*----------
-	----HOME----
-	----------*/
-	#home-kanji-columns {
-  		@include media-breakpoint-up(sm) {
-    		column-count: 1;
-    		column-gap: 0;
-    	}
-	}
-
-	#home-kanji-columns .kanji-card > div {
-		padding: 12px 0 !important;
-	}
-
+	
 	/*---------------
 	----ALPHABETS----
 	---------------*/
@@ -44,6 +21,14 @@
 	----RESEARCH----
 	--------------*/
 	#results article {
+		padding: 0 !important;
+	}
+
+	#rResults article {
+		padding: 0 !important;
+	}
+
+	#panel-results article {
 		padding: 0 !important;
 	}
 }

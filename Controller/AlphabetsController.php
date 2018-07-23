@@ -22,13 +22,15 @@ class AlphabetsController extends Controller {
 	
 	public function hiragana() {
 		$this->generateView(array(
-			'letters' => $this->hiragana->getAllHira()
+			'letters' => $this->hiragana->getAllHira(),
+			'table_t' => 'Hiragana'
 		));		
 	}
 
 	public function katakana() {
 		$this->generateView(array(
-			'letters' => $this->katakana->getAllKata()
+			'letters' => $this->katakana->getAllKata(),
+			'table_t' => 'Katakana'
 		));
 	}
 

@@ -4,13 +4,14 @@ require_once('Framework/Model.php');
 
 class Kanji extends Model {
 
+	private $basicSql = 'SELECT id FROM kanji';
+	private $selectAllSql = 'SELECT * FROM kanji';
+
 //CHECK
 
 	//TEST SI UN KANJI EXISTE
 	public function checkKanji($id) {
-		$sql = '
-			SELECT id
-			FROM kanji
+		$sql = $this->basicSql . '			
 			WHERE id = ?
 		';
 		$params = array($id);
@@ -18,44 +19,9 @@ class Kanji extends Model {
 	}
 
 	//COMPARAISON SUR KANJI
-	public function checkFilterKanji($filter) {
-		$sql = '
-			SELECT id
-			FROM kanji
-			WHERE kanji REGEXP ?
-		';
-		$params = array($filter);
-		return $this->check($this->sqlRequest($sql, $params));
-	}
-
-	//COMPARAISON SUR SIGNIFICATION
-	public function checkFilterMeaning($filter) {
-		$sql = '
-			SELECT id
-			FROM kanji
-			WHERE meaning REGEXP ?
-		';
-		$params = array($filter);
-		return $this->check($this->sqlRequest($sql, $params));
-	}
-
-	//COMPARAISON SUR LECTURE CHINOISE
-	public function checkFilterOn($filter) {
-		$sql = '
-			SELECT id
-			FROM kanji
-			WHERE chinese REGEXP ?
-		';
-		$params = array($filter);
-		return $this->check($this->sqlRequest($sql, $params));
-	}
-
-	//COMPARAISON SUR LECTURE JAPONAISE
-	public function checkFilterKun($filter) {
-		$sql = '
-			SELECT id
-			FROM kanji
-			WHERE japanese REGEXP ?
+	public function checkFilter($col, $filter) {
+		$sql = $this->basicSql . '
+			WHERE ' . $col . ' REGEXP ?
 		';
 		$params = array($filter);
 		return $this->check($this->sqlRequest($sql, $params));
@@ -63,45 +29,9 @@ class Kanji extends Model {
 
 //FILTERED GET 
 
-	//CONDITIONNEMENT PAR KANJI
-	public function getFilteredKanji($filter) {
-		$sql = '
-			SELECT *
-			FROM kanji
-			WHERE kanji REGEXP ?
-		';
-		$params = array($filter);
-		return $this->sqlRequest($sql, $params);
-	}
-
-	//CONDITIONNEMENT PAR SIGNIFICATION
-	public function getFilteredMeaning($filter) {
-		$sql = '
-			SELECT *
-			FROM kanji
-			WHERE meaning REGEXP ?
-		';
-		$params = array($filter);
-		return $this->sqlRequest($sql, $params);
-	}
-
-	//CONDITIONNEMENT PAR LECTURE CHINOISE
-	public function getFilteredOn($filter) {
-		$sql = '
-			SELECT *
-			FROM kanji
-			WHERE chinese REGEXP ?
-		';
-		$params = array($filter);
-		return $this->sqlRequest($sql, $params);
-	}
-
-	//CONDITIONNEMENT PAR LECTURE JAPONAISE
-	public function getFilteredKun($filter) {
-		$sql = '
-			SELECT *
-			FROM kanji
-			WHERE japanese REGEXP ?
+	public function getFiltered($col, $filter) {
+		$sql = $this->selectAllSql . '
+			WHERE ' . $col . ' REGEXP ?
 		';
 		$params = array($filter);
 		return $this->sqlRequest($sql, $params);
@@ -123,9 +53,7 @@ class Kanji extends Model {
 
 	//REND LES INFOS COMPLETES D'UN KANJI
 	public function getInfoKanji($id) {
-		$sql = '
-			SELECT *
-			FROM kanji
+		$sql = $this->selectAllSql . '
 			WHERE id = ?
 		';
 		$params = array($id);
@@ -133,24 +61,24 @@ class Kanji extends Model {
 		return $this->sqlRequest($sql, $params);
 	}
 
+//ATTENTE
+
+	/*
 	//REND LE SIGNE D'UN KANJI
 	public function getSignKanji($id) {
-		$sql = '
-			SELECT kanji
-			FROM kanji
+		$sql = $this->basicSql . '
 			WHERE id = ?
 		';
 		$params = array($id);
 
 		return $this->sqlRequest($sql, $params);
 	}
+	*/
 
 	/*
 	//A VOIR POUR UN COMPTE SUR LE SITE
 	public function getLastKanji() {
-		$sql = '
-			SELECT *
-			FROM kanji
+		$sql = $this->selectAllSql . '
 			ORDER BY id DESC
 			LIMIT 0,9
 		';

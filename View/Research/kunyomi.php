@@ -1,5 +1,5 @@
 <?php $this->title = "Kanji List : recherche par Kun'yomi"; ?>
-<?php $this->description = "Découvrez nos solutions pour vous aider à apprendre le japonais !";?>
+<?php $this->description = "Cherchez un kanji selon sa lecture japonaise : Kun'yomi";?>
 
 <section class="row justify-content-center py-3" id="kunyomi-title">
 	<article class="col-12 text-center pb-2">

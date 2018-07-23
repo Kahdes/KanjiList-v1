@@ -3,26 +3,34 @@ var Research = {
 	inputElt: null,
 
 	init() {
-		this.formElt = document.getElementsByClassName('form')[0];
-		this.inputElt = document.getElementsByClassName('research')[0];
+		//EMPECHE DE VALIDER UN FORMULAIRE AVEC 'ENTRER'
+		$(document).ready(function() {
+		    $("form").bind("keypress", function(e) {
+		        if (e.keyCode == 13) {
+		            return false;
+		        }
+		    });
+		});
 
-		let id = this.formElt.id; 
+		let formElt = document.getElementsByClassName('form')[0];
+		
+		let id = formElt.id; 
 		let handle = (id === 'kanji-form');
 
 		this.analyze(handle);
 	},
 
-	analyze(handle) {
-		let formElt = this.formElt;
-		let inputElt = this.inputElt;
+	analyze(handle) {		
+		let formElt = document.getElementsByClassName('form')[0];
+		let inputElt = document.getElementsByClassName('research')[0];
 		let status = 0;
 
 		inputElt.addEventListener('blur', function(e) {
 			let inputValue = inputElt.value;
 			if (handle) {
-				var regex = /^([一-龯]){1,}$/;
+				var regex = /^([一-龯])+$/;
 			} else {
-				var regex = /^([\D]){1}([\D\/\[\]\s]){0,}$/i;					
+				var regex = /^([^一-龯\s/()\[\]@|_-]){1,}([\D\/\[\]\s])*$/i;					
 			}
 
 			if (regex.test(inputValue) || inputValue === "") {
@@ -40,9 +48,9 @@ var Research = {
 					e.preventDefault();
 				}
 			})
-		});
-		
+		});		
 	}
+	
 };
 
 Research.init();

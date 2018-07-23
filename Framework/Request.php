@@ -25,7 +25,7 @@ class Request {
 		if ($this->isParameter($name)) {
 			return $this->parameters[$name];
 		} else {
-			throw new Exception("Paramètre '$name' inexistant");			
+			throw new Exception("Paramètre '$name' inexistant");				
 		}
 	}
 	

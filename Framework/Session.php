@@ -21,8 +21,7 @@ class Session {
     public function getAttribute($name) {
         if ($this->isAttribute($name)) {
             return $_SESSION[$name];
-        }
-        else {
+        } else {
             throw new Exception("Attribut '$name' absent de la session");
         }
     }

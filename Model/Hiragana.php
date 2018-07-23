@@ -17,7 +17,19 @@ class Hiragana extends Model {
 		return $this->check($this->sqlRequest($sql, $params));
 	}
 
-//FILTERED GET
+//BASIC GET
+
+	//REND TOUS LES HIRAGANA
+	public function getAllHira() {
+		$sql = '
+			SELECT *
+			FROM hiragana
+		';
+
+		return $this->sqlRequest($sql);
+	}
+
+//ATTENTE
 
 	/*
 	//CONDITIONNEMENT PAR GROUPE VOYELLE
@@ -31,18 +43,6 @@ class Hiragana extends Model {
 		return $this->sqlRequest($sql, $params);
 	}
 	*/
-
-//BASIC GET
-
-	//REND TOUS LES HIRAGANA
-	public function getAllHira() {
-		$sql = '
-			SELECT *
-			FROM hiragana
-		';
-
-		return $this->sqlRequest($sql);
-	}
 
 	/*
 	//REND 9 HIRAGANA ALEATOIRES

@@ -1,17 +1,41 @@
 var Research = {
-	api: 'https://jisho.org/api/v1/search/words?keyword=',
+	api: 'https://kanjialive-api.p.mashape.com/api/public/kanji/',
 	kanji: null,
+	kanjiElt: null,
 	sectionElt: null,
 
 	init() {
-		this.kanji = document.getElementById('result-kanji').textContent;
-		var short = this.kanji.trim();
+		this.kanjiElt = $('#r-kanji');
+		this.kanji = this.kanjiElt.text().trim();
+		this.api = this.api + this.kanji;
+		this.buildAjax(this.api);		
+	},
 
-		this.api = this.api + short;
-		console.log(this.api);
+	buildAjax(api) {
+		Ajax.ajaxGet(this.api, function(answer) {
+			var infos = JSON.parse(answer);
+			if (infos) {
+				var error = infos['error'];
+				if (error == undefined) {
+					$('#r-video').removeClass('d-none');				
 
-		Ajax.ajaxGet(this.api, function() {
-			console.log('OK');
+					var infoKanji = infos['kanji'];
+					var video = infoKanji['video']['mp4'];				
+					var onKata = infoKanji['onyomi']['katakana'];
+					var kunHira = infoKanji['kunyomi']['hiragana'];
+
+					$('#r-onyomi').text(onKata);			
+					$('#r-kunyomi').append(kunHira);
+					$('#r-video').attr('href', video);
+				} else {
+					$('#r-onyomi').text('...');			
+					$('#r-kunyomi').append('...');
+				}
+			} else {
+				$('#r-onyomi').text('...');			
+				$('#r-kunyomi').append('...');
+			}
+				
 		});
 	}
 };

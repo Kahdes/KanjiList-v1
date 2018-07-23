@@ -22,32 +22,29 @@ class Account extends Model {
 		$sql = '
 			SELECT id,
 			       pseudo,
-				   password AS p,
-				   account_identifier AS ac
+				   password AS p
 			FROM account
 		';
 		return $this->sqlRequest($sql);
 	}
 
 	//CREATION DE COMPTE
-	public function setAccount($acc_i, $pseudo, $password) {
+	public function setAccount($pseudo, $password) {
 		$sql = '
-			INSERT INTO account (account_identifier, pseudo, password, NOW())
-			VALUES (?, ?, ?)
+			INSERT INTO account (pseudo, password)
+			VALUES (?, ?)
 		';
-		$params = array($acc_i, $pseudo, $password);
+		$params = array($pseudo, $password);
 		return $this->sqlRequest($sql, $params);
 	}
 
 	public function connect($pseudo, $pwd) {
 		$sql = '
-			INSERT INTO account (account_identifier, pseudo, password, NOW())
+			INSERT INTO account (pseudo, password)
 			VALUES (?, ?, ?)
 		';
 		$params = array($acc_i, $pseudo, $password);
 		return $this->sqlRequest($sql, $params);
 	}
-
-
 
 }

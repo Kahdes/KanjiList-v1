@@ -12,6 +12,8 @@ var Ajax = {
             console.error("Erreur réseau avec l'URL " + url);
         });
         req.open("GET", url);
+        req.setRequestHeader('X-Mashape-Key', 'vcDR5za7eAmshKQVqc9wAhzbuW2sp15lFm9jsnsduB5UdPJK6A');
+        req.setRequestHeader('Accept', 'application/json');
         req.send(null);
     }
 };

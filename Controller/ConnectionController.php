@@ -15,17 +15,29 @@ class ConnectionController extends Controller {
 
 	public function index() {
 		if ($this->request->getSession()->isAttribute('pseudo')) {
-			$this->redirect('Home');
+			$this->redirect('Panel', 'index');
 		} else {
 			$this->generateView(array());
 		}		
 	}
 
-	public function error($title, $msg) {
-
+	public function inscription() {
+		$this->generateView(array());
 	}
 
 //METHODES SPECIFIQUES
+
+	public function signIn() {
+        if ($this->request->isParameter('sign-pseudo') && $this->request->isParameter('sign-pwd')) {
+            $pseudo = $this->request->getParameter("sign-pseudo");
+            $pwd = $this->requete->getParameter("sign-pwd");
+
+            $this->client->setAccount($pseudo, $pwd);
+            $this->accountHome($pseudo, $pwd);
+        } else {        	
+            throw new Exception();
+        }
+    }
 
 	public function connect() {
         $pseudo = $this->request->getParameter("connect-id");
@@ -35,10 +47,10 @@ class ConnectionController extends Controller {
            	if (password_verify($pwd, $account['p'])) {
            		$this->accountHome($pseudo, $pwd);
            	} else {
-           		throw new Exception();
+           		$this->redirect('Connection', 'index');
            	}                
         } else {            	
-            throw new Exception();
+            $this->redirect('Connection', 'index');
         }
 	}
 
@@ -50,7 +62,7 @@ class ConnectionController extends Controller {
 	private function accountHome($pseudo, $pwd) {
 		$account = $this->account->getAccount()->fetch();
 		$this->request->getSession()->setAttribute('pseudo', $account['pseudo']);
-		$this->redirect('Home');
+		$this->redirect('Panel', 'index');
 	}
 	
 }

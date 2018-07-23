@@ -29,6 +29,8 @@ class Katakana extends Model {
 		return $this->sqlRequest($sql);
 	}
 
+//ATTENTE
+
 	/*
 	//REND 9 HIRAGANA ALEATOIRES
 	public function getRandomKata() {

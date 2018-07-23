@@ -13,22 +13,39 @@
 	         	</li>
 	         	<li class="nav-item" id="Alphabets">
 	            	<a class="nav-link" href="Alphabets/index">Alphabets</a>
-	          	</li>
-	          	<li class="nav-item" id="Exercises">
-	            	<a class="nav-link" href="Exercises/index">Exercices</a>
-	          	</li>
+	          	</li>	          	
 	          	<li class="nav-item" id="Research">
 	            	<a class="nav-link" href="Research/index">Recherche</a>
 	          	</li>
-	          	<li class="nav-item" id="Connection">
-	            	<a class="nav-link" href="Connection/index">Connexion</a>
-	          	</li>    
+<?php
+	if (isset($_SESSION['pseudo'])) {
+?>
+				<li class="nav-item" id="Exercises">
+	            	<a class="nav-link" href="Exercises/index">Exercices</a>
+	          	</li>
+				<li class="nav-item" id="Panel">
+	            	<a class="nav-link" href="Panel/index">Tableau de bord</a>
+	          	</li>
+<?php
+	} else {
+?>
+				<li class="nav-item dropdown">
+			        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			          	Compte
+			        </a>
+			        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+			            <a class="dropdown-item" href="Connection/index">Connection</a>
+	            		<a class="dropdown-item" href="Connection/inscription">Inscription</a>
+			    </li>
+<?php
+	}
+?>	          	    
 	    	</ul>
 <?php
 	if (isset($_SESSION['pseudo'])) {
 ?>
-		<form action="Connection/disconnect" method="post" class="form-inline my-2 my-lg-0">
-	      	<button class="btn btn-danger my-2 my-sm-0" type="submit">Déconnexion</button>
+		<form action="Connection/disconnect" method="post" class="form-inline my-0">
+	      	<button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Déconnexion</button>
 	    </form>
 <?php
 	}

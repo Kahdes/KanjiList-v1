@@ -1,5 +1,5 @@
 <?php $this->title = "Kanji List : options de recherche"; ?>
-<?php $this->description = "Découvrez nos solutions pour vous aider à apprendre le japonais !";?>
+<?php $this->description = "Choisissez l'une des options de recherche afin de trouver le kanji que vous cherchez";?>
 
 <section class="row justify-content-center py-3" id="research-title">
 	<article class="col-12 text-center pb-2">

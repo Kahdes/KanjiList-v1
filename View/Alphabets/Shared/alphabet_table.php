@@ -4,15 +4,15 @@
 			<thead class="thead-light">
 				<tr>
 					<th colspan="5">
-						<h3 class="m-0">Table des Hiragana</h3>
+						<h3 class="m-0">Table des <?=$table_t;?></h3>
 					</th>					
 				</tr>
 				<tr>
-					<th><h4>A</h4></td>
-					<th><h4>I</h4></th>
-					<th><h4>U</h4></th>
-					<th><h4>E</h4></th>
-					<th><h4>O</h4></th>
+					<th><h4 class="m-0">A</h4></td>
+					<th><h4 class="m-0">I</h4></th>
+					<th><h4 class="m-0">U</h4></th>
+					<th><h4 class="m-0">E</h4></th>
+					<th><h4 class="m-0">O</h4></th>
 				</tr>
 			</thead>
 

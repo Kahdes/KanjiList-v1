@@ -1,4 +1,4 @@
-<div id="demo" class="row carousel slide" data-ride="carousel" id="carousel">
+<div id="demo" class="row d-none d-md-block carousel slide" data-ride="carousel">
 	<ul class="carousel-indicators">
 	    <li data-target="#demo" data-slide-to="0" class="active"></li>
 	    <li data-target="#demo" data-slide-to="1"></li>
@@ -7,22 +7,13 @@
 
 	<div class="carousel-inner">
 	    <div class="carousel-item active">
-		    <img class="carousel-img" src="Public/images/a.jpg" alt="Image-1">
-		    <div class="carousel-caption">
-	        	<h3>Image 1</h3>
-	        </div>
+		    <img class="carousel-img" src="Public/images/e.jpg" alt="Image-1"/>
 	    </div>
 	    <div class="carousel-item">
-	        <img class="carousel-img" src="Public/images/b.jpg" alt="Image-2">
-	        <div class="carousel-caption">
-	        	<h3>Image 2</h3>
-	        </div>
+	        <img class="carousel-img" src="Public/images/f.jpg" alt="Image-2"/>
 	    </div>
 	    <div class="carousel-item">
-	        <img class="carousel-img" src="Public/images/c.jpg" alt="Image-3" />
-	        <div class="carousel-caption">
-	        	<h3>Image 3</h3>
-	        </div>
+	        <img class="carousel-img" src="Public/images/g.jpg" alt="Image-3"/>
 	    </div>
 	</div>
 		  

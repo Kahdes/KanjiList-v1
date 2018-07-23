@@ -34,6 +34,7 @@ class View {
 		    require($file);
 		    return ob_get_clean();
 		} else {
+			echo 'OK6';
 		    throw new Exception("Fichier '$file' introuvable");
 		}
 	}
