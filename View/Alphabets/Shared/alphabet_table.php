@@ -8,7 +8,7 @@
 					</th>					
 				</tr>
 				<tr>
-					<th><h4 class="m-0">A</h4></td>
+					<th><h4 class="m-0">A</h4></th>
 					<th><h4 class="m-0">I</h4></th>
 					<th><h4 class="m-0">U</h4></th>
 					<th><h4 class="m-0">E</h4></th>

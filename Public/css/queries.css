@@ -1,34 +1,34 @@
 @media all and (max-width: 767px) {
-	/*-------------
+    /*-------------
 	----GENERAL----
 	-------------*/
-	.container {
-		margin: 0 !important;
-		width: 100% !important;
-		max-width: 100% !important;
-	}
-	
-	/*---------------
+    .container {
+        margin: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /*---------------
 	----ALPHABETS----
 	---------------*/
-	.alphabet-card:first-of-type {
-		margin-bottom: 24px !important;
-	}	
+    .alphabet-card:first-of-type {
+        margin-bottom: 24px !important;
+    }
 }
 
 @media all and (max-width: 500px) {
-	/*--------------
+    /*--------------
 	----RESEARCH----
 	--------------*/
-	#results article {
-		padding: 0 !important;
-	}
+    #results article {
+        padding: 0 !important;
+    }
 
-	#rResults article {
-		padding: 0 !important;
-	}
+    #rResults article {
+        padding: 0 !important;
+    }
 
-	#panel-results article {
-		padding: 0 !important;
-	}
+    #panel-results article {
+        padding: 0 !important;
+    }
 }

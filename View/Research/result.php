@@ -9,7 +9,7 @@
 </section>
 
 <section class="row justify-content-center py-3" id="results">
-	<?php
+<?php
 	foreach ($kanji as $k) {
 		if (preg_match('/(\(\d\))/', $k['kanji'])) {
 			$version = preg_split('/^([一-龯]){1,}/', $k['kanji']);

@@ -11,7 +11,7 @@
 					</th>					
 				</tr>
 				<tr>
-					<th scope="col"><h4 class="m-0">Kanji</h4></td>
+					<th scope="col"><h4 class="m-0">Kanji</h4></th>
 					<th scope="col"><h4 class="m-0">Lectures</h4></th>
 					<th scope="col"><h4 class="m-0">Signification</h4></th>
 				</tr>
@@ -47,7 +47,7 @@
 <?php
 	} elseif (isset($result)) {
 ?>
-	<article class="class="col-12 col-sm-10 text-center">
+	<article class="col-12 col-sm-10 text-center">
 		<h2><?=$result;?></h2>
 	</article>
 <?php

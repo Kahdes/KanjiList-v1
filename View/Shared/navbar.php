@@ -13,7 +13,7 @@
 	         	</li>
 	         	<li class="nav-item" id="Alphabets">
 	            	<a class="nav-link" href="Alphabets/index">Alphabets</a>
-	          	</li>	          	
+                </li>
 	          	<li class="nav-item" id="Research">
 	            	<a class="nav-link" href="Research/index">Recherche</a>
 	          	</li>
@@ -40,7 +40,7 @@
 			    </li>
 <?php
 	}
-?>	          	    
+?>
 	    	</ul>
 <?php
 	if (isset($_SESSION['pseudo'])) {
