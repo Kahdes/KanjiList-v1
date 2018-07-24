@@ -1,14 +1,12 @@
 var Research = {
 	api: 'https://kanjialive-api.p.mashape.com/api/public/kanji/',
-	kanji: null,
-	kanjiElt: null,
-	sectionElt: null,
 
 	init() {
 		this.kanjiElt = $('#r-kanji');
 		this.kanji = this.kanjiElt.text().trim();
 		this.api = this.api + this.kanji;
-		this.buildAjax(this.api);		
+		this.buildAjax(this.api);
+		console.log(this);	
 	},
 
 	buildAjax(api) {
@@ -17,8 +15,6 @@ var Research = {
 			if (infos) {
 				var error = infos['error'];
 				if (error == undefined) {
-					$('#r-video').removeClass('d-none');				
-
 					var infoKanji = infos['kanji'];
 					var video = infoKanji['video']['mp4'];				
 					var onKata = infoKanji['onyomi']['katakana'];
@@ -27,6 +23,7 @@ var Research = {
 					$('#r-onyomi').text(onKata);			
 					$('#r-kunyomi').append(kunHira);
 					$('#r-video').attr('href', video);
+					$('#r-video').removeClass('d-none');
 				} else {
 					$('#r-onyomi').text('...');			
 					$('#r-kunyomi').append('...');
@@ -34,8 +31,7 @@ var Research = {
 			} else {
 				$('#r-onyomi').text('...');			
 				$('#r-kunyomi').append('...');
-			}
-				
+			}				
 		});
 	}
 };

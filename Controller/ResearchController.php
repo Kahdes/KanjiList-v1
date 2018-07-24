@@ -41,9 +41,6 @@ class ResearchController extends Controller {
 			$id = $this->request->getParameter('id');
 			if ($this->kanji->checkKanji($id)) {
 				$filter = $this->kanji->getInfoKanji($id)->fetch();
-				if (preg_match('/(\(\d\))/', $filter['kanji'])) {
-					$filter['kanji'] = preg_replace('/\(\d\)/', '', $filter['kanji']);
-				}
 				$account = null;
 				if ($this->request->getSession()->isAttribute('pseudo')) {
 					$account_name = $this->request->getSession()->getAttribute('pseudo');

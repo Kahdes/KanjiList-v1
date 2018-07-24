@@ -5,7 +5,7 @@
 	<article class="col-12 text-center pb-2">
 		<h2 class="display-4">Options de recherche</h2>
 		<hr/>
-		<p class="lead m-0">Choisissez une option de recherche puis renseignez votre demande</p>
+		<p class="lead m-0">Choisissez une <strong>option de recherche</strong> puis renseignez votre demande</p>
 	</article>
 </section>
 

@@ -36,7 +36,8 @@ class PanelController extends SecurityController {
 		if ($this->request->isParameter('id')) {
 			$id_kanji = $this->request->getParameter('id');	
 			if ($this->kanji->checkKanji($id_kanji)) {
-				$pseudo = $this->accountInfo['pseudo'];
+				$pseudo = $this->pseudo;
+				var_dump($pseudo);
 				$this->pList->setItem($pseudo, $id_kanji);
 				$this->redirect('Panel', 'index');
 			} else {

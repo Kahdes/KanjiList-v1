@@ -34,8 +34,9 @@
 			          	Compte
 			        </a>
 			        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-			            <a class="dropdown-item" href="Connection/index">Connection</a>
+			            <a class="dropdown-item" href="Connection/index">Connexion</a>
 	            		<a class="dropdown-item" href="Connection/inscription">Inscription</a>
+	            	</div>
 			    </li>
 <?php
 	}

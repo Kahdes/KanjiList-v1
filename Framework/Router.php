@@ -33,7 +33,6 @@ class Router {
 			$controller->setRequest($request);
 			return $controller;
 		} else {
-			echo 'OK4';
 			throw new Exception("Fichier '$controllerFile' introuvable");
 		}
 	}

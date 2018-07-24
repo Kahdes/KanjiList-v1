@@ -22,7 +22,6 @@ class Configuration {
             }
             if (!file_exists($filePath)) {
                 throw new Exception("Aucun fichier de configuration trouvé");
-                echo 'OK2';
             } else {
              self::$parameters = parse_ini_file($filePath);
             }

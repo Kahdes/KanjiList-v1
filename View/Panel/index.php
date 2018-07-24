@@ -5,6 +5,7 @@
 	<article class="col-12 text-center">
 		<h2 class="display-4">Tableau de bord</h2>
 		<hr/>
+		<p class="m-0 lead"><?=$pseudo;?></p>
 	</article>
 </section>
 
@@ -22,8 +23,8 @@
 				</tr>
 				<tr>
 					<th scope="col"><h4 class="m-0">Kanji</h4></td>
-					<th scope="col"><h4 class="m-0">Lectures</h4></th>
 					<th scope="col"><h4 class="m-0">Signification</h4></th>
+					<th scope="col"><h4 class="m-0">Statut</h4></th>
 				</tr>
 			</thead>
 
@@ -33,21 +34,31 @@
 	foreach ($list as $l) {
 ?>
 			<tr>
-				<td class="pt-3">
+				<td class="pt-3" id="panel-kanji">
 					<a href="Research/result/<?=$l['id_kanji'];?>">
 						<h4><?=$l['kanji'];?></h4>
 					</a>
 				</td>
 
-				<td>
-					<?=$l['chinese'];?>
-					<br/>
-					<em><?=$l['japanese'];?></em>
-				</td>
-
-				<td class="lead pt-3">
+				<td class="lead pt-3" id="panel-meaning">
 					<?=ucfirst($l['meaning']);?>
 				</td>
+
+				<td class="py-3" id="panel-progress">
+					<div class="progress">
+<?php
+	if ($l['state'] == 0) {
+?>
+						<div class="progress-bar custom-danger" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">0%</div>
+<?php
+	} else {
+?>
+						<div class="progress-bar custom-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
+<?php
+	}
+?>
+					</div>
+				</td>				
 			</tr>
 <?php
 		}

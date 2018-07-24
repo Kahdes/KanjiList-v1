@@ -67,6 +67,15 @@
 <?php
         }
     }
+
+    if (isset($_GET['controller']) && $_GET['controller'] === 'Connection') {
+        if (isset($_GET['action']) && $_GET['action'] === 'inscription') {
+?>
+    <!--RESULT-->
+    <script type="text/javascript" src="Public/js/inscription.js"></script>
+<?php
+        }
+    }
 ?>
 
 </body>

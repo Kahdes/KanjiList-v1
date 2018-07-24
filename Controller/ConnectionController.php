@@ -22,6 +22,14 @@ class ConnectionController extends Controller {
 	}
 
 	public function inscription() {
+		if ($this->request->getSession()->isAttribute('pseudo')) {
+			$this->redirect('Panel', 'index');
+		} else {
+			$this->generateView(array());
+		}
+	}
+
+	public function error() {
 		$this->generateView(array());
 	}
 
@@ -29,28 +37,33 @@ class ConnectionController extends Controller {
 
 	public function signIn() {
         if ($this->request->isParameter('sign-pseudo') && $this->request->isParameter('sign-pwd')) {
-            $pseudo = $this->request->getParameter("sign-pseudo");
-            $pwd = $this->requete->getParameter("sign-pwd");
+            $pseudo = $this->request->getParameter("sign-pseudo");            
+            if ($this->account->checkAccount($pseudo)) {
+	          	$this->redirect('Connection', 'inscription');
+	        } else {
+	        	$pwd = $this->request->getParameter("sign-pwd");
+            	$pwd = password_hash($pwd, PASSWORD_DEFAULT);
 
-            $this->client->setAccount($pseudo, $pwd);
-            $this->accountHome($pseudo, $pwd);
+	            $this->account->setAccount($pseudo, $pwd);
+            	$this->accountHome($pseudo, $pwd);
+	        }            
         } else {        	
-            throw new Exception();
+            $this->redirect('Connection', 'inscription');
         }
     }
 
 	public function connect() {
         $pseudo = $this->request->getParameter("connect-id");
         $pwd = $this->request->getParameter("connect-pwd");
-        if ($this->account->isAccount($pseudo)) {
-          	$account = $this->account->isAccount($pseudo)->fetch();
+        if ($this->account->checkAccount($pseudo)) {
+          	$account = $this->account->getAccount($pseudo)->fetch();
            	if (password_verify($pwd, $account['p'])) {
            		$this->accountHome($pseudo, $pwd);
            	} else {
-           		$this->redirect('Connection', 'index');
+           		$this->redirect('Connection', 'error');
            	}                
         } else {            	
-            $this->redirect('Connection', 'index');
+            $this->redirect('Connection', 'error');
         }
 	}
 
@@ -60,7 +73,7 @@ class ConnectionController extends Controller {
 	}
 
 	private function accountHome($pseudo, $pwd) {
-		$account = $this->account->getAccount()->fetch();
+		$account = $this->account->getAccount($pseudo)->fetch();
 		$this->request->getSession()->setAttribute('pseudo', $account['pseudo']);
 		$this->redirect('Panel', 'index');
 	}

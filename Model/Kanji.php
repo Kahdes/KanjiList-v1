@@ -39,13 +39,13 @@ class Kanji extends Model {
 
 //BASIC GET 
 
-	//REND 9 KANJI ALEATOIRES
-	public function getRandomKanji() {
+	//REND UN NOMBRE DE KANJI ALEATOIRES
+	public function getRandomKanji($limit) {
 		$sql = '
 			SELECT SQL_NO_CACHE *
 			FROM kanji
 			ORDER BY RAND()
-			LIMIT 6
+			LIMIT ' . $limit . '
 		';
 
 		return $this->sqlRequest($sql);
@@ -60,31 +60,5 @@ class Kanji extends Model {
 
 		return $this->sqlRequest($sql, $params);
 	}
-
-//ATTENTE
-
-	/*
-	//REND LE SIGNE D'UN KANJI
-	public function getSignKanji($id) {
-		$sql = $this->basicSql . '
-			WHERE id = ?
-		';
-		$params = array($id);
-
-		return $this->sqlRequest($sql, $params);
-	}
-	*/
-
-	/*
-	//A VOIR POUR UN COMPTE SUR LE SITE
-	public function getLastKanji() {
-		$sql = $this->selectAllSql . '
-			ORDER BY id DESC
-			LIMIT 0,9
-		';
-
-		return $this->sqlRequest($sql);
-	}
-	*/
 
 }

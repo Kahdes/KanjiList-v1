@@ -10,8 +10,9 @@ abstract class SecurityController extends Controller {
 
     public function executeAction($action) {
         if ($this->request->getSession()->isAttribute('pseudo')) {
+            $pseudo = $this->request->getSession()->getAttribute('pseudo');
             $this->account = new Account();
-        	$this->pseudo = $this->account->getAccount()->fetch()['pseudo'];
+        	$this->pseudo = $this->account->getAccount($pseudo)->fetch()['pseudo'];
             parent::executeAction($action);
         }
         else {

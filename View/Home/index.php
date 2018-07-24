@@ -7,7 +7,7 @@
 	<article class="col-12 text-white text-center pb-2">
 		<h2 class="display-4">Les alphabets japonais</h3>
 		<hr/>
-		<p class="lead">Apprenez-en plus sur les différents alphabets japonais en consultant nos tableaux récapitulatifs !</p>
+		<p class="lead">Apprenez-en plus sur les différents <strong>alphabets japonais</strong> en consultant nos tableaux récapitulatifs !</p>
 	</article>
 
 	<article class="col-12 col-md-5 text-center mb-4 mb-md-0">

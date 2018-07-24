@@ -16,8 +16,6 @@ var Navbar = {
 				$('#Exercises').addClass("active");
 			} else if (this.panelRegex.test(this.url)) {
 				$('#Panel').addClass("active");
-			} else {
-				$('#Home').addClass("active");
 			}
 		} else {
 			$('#Home').addClass("active");

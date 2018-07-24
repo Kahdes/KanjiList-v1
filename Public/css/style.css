@@ -6,6 +6,10 @@ body {
 	min-width: 303px !important;
 }
 
+#main {
+	min-height: 723px !important;
+}
+
 a:link {
 	text-decoration: none;
 }
@@ -77,11 +81,25 @@ a:hover {
 }
 
 /*---------------
-------ERROR------
+------PANEL------
 ---------------*/
 
-#error {
-	padding: 100px 0 !important;
+#panel-kanji {
+	width: 20%;
+}
+
+#panel-meaning,
+#panel-progress {
+	width: 40%;
+}
+
+#panel-progress .progress,
+.progress .progress-bar {
+	height: 30px;
+}
+
+.progress .progress-bar {
+	width: 100%;
 }
 
 /*----------------

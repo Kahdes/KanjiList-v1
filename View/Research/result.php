@@ -101,7 +101,7 @@
 ?>
 </section>
 
-<section class="row justify-content-center pt-0 pb-3" id="result-title">
+<section class="row justify-content-center pt-0 pb-3" id="result-return">
 	<article class="col-12 text-center">
 		<a class="btn btn-link" href="Research/index">Retour à la page de Recherche</a>
 	</article>

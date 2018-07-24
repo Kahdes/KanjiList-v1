@@ -19,7 +19,6 @@ abstract class Controller {
 			$this->{$this->action} ();
 		} else {
 			$controllerClass = get_class($this);
-			echo 'OK1';
 			throw new Exception("Action '$action' non définie dans la classe $controllerClass");					
 		}
 	}

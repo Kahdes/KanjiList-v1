@@ -5,27 +5,30 @@ require_once('Framework/Model.php');
 class Account extends Model {
 
 	//CHECK COMPTE EXISTANT
-	public function isAccount($pseudo) {
+	public function checkAccount($pseudo) {
 		$sql = '
-			SELECT password AS p
+			SELECT id
 			FROM account
 			WHERE pseudo = :pseudo
 		';
 		$params = array(
 			"pseudo" => $pseudo
 		);
-		return $this->sqlRequest($sql, $params);
+		return $this->check($this->sqlRequest($sql, $params));
 	}
 
 	//CHECK COMPTE EXISTANT
-	public function getAccount() {
+	public function getAccount($pseudo) {
 		$sql = '
 			SELECT id,
 			       pseudo,
 				   password AS p
 			FROM account
+			WHERE pseudo = ?
 		';
-		return $this->sqlRequest($sql);
+		$params = array($pseudo);
+
+		return $this->sqlRequest($sql, $params);
 	}
 
 	//CREATION DE COMPTE
