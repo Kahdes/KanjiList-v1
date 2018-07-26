@@ -12,12 +12,12 @@
 <section class="row justify-content-center py-3" id="kanji-opt">
     <article class="col-12 col-sm-10 text-center">
         <form action="Research/kanji" method="post" class="form" id="kanji-form">
-            <label class="sr-only" for="research-k">Kanji</label>
+            <label class="sr-only" for="research">Kanji</label>
             <div class="input-group">
                 <div class="input-group-prepend">
                     <div class="input-group-text bg-dark text-white">Kanji</div>
                 </div>
-                <input class="form-control form-control-lg research" type="text" name="research-k" id="research-k" placeholder="Ex : 金" required />
+                <input class="form-control form-control-lg research" type="text" name="research" id="research" placeholder="Ex : 金" required />
             </div>
             <p class="d-none alert alert-danger research-danger m-0">La recherche contient des caractères interdits</p>
             <button class="form-control form-control-lg btn btn-lg btn-warning sub mt-3" type="submit">Rechercher</button>

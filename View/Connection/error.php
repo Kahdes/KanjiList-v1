@@ -8,7 +8,7 @@
         </h2>
         <hr/>
         <p class="lead">
-            Votre compte est inexistant.
+            Ce compte est inexistant.
             <br/>
             <a href="Home/index">Retour à l'accueil du site</a> /
             <a href="Connection/index">Retour à la connexion</a>

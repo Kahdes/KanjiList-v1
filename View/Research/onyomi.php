@@ -12,12 +12,12 @@
 <section class="row justify-content-center py-3" id="onyomi-opt">
     <article class="col-12 col-sm-10 text-center">
         <form action="Research/onyomi" method="post" class="form" id="onyomi-form">
-            <label class="sr-only" for="research-on">On'yomi</label>
+            <label class="sr-only" for="research">On'yomi</label>
             <div class="input-group">
                 <div class="input-group-prepend">
                     <div class="input-group-text bg-dark text-white">On'yomi</div>
                 </div>
-                <input class="form-control form-control-lg research" type="text" name="research-on" id="research-on" placeholder="Ex : KIN/KON" required />
+                <input class="form-control form-control-lg research" type="text" name="research" id="research" placeholder="Ex : KIN/KON" required />
             </div>
             <p class="d-none alert alert-danger research-danger m-0">La recherche contient des caractères interdits</p>
             <button class="form-control form-control-lg btn btn-lg btn-warning sub mt-3" type="submit">Rechercher</button>

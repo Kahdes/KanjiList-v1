@@ -17,7 +17,7 @@ class Account extends Model {
 		return $this->check($this->sqlRequest($sql, $params));
 	}
 
-	//CHECK COMPTE EXISTANT
+	//REND INFOS COMPTE EXISTANT
 	public function getAccount($pseudo) {
 		$sql = '
 			SELECT id,
@@ -27,26 +27,16 @@ class Account extends Model {
 			WHERE pseudo = ?
 		';
 		$params = array($pseudo);
-
 		return $this->sqlRequest($sql, $params);
 	}
 
-	//CREATION DE COMPTE
+	//CREATION NOUVEAU COMPTE
 	public function setAccount($pseudo, $password) {
 		$sql = '
 			INSERT INTO account (pseudo, password)
 			VALUES (?, ?)
 		';
 		$params = array($pseudo, $password);
-		return $this->sqlRequest($sql, $params);
-	}
-
-	public function connect($pseudo, $pwd) {
-		$sql = '
-			INSERT INTO account (pseudo, password)
-			VALUES (?, ?, ?)
-		';
-		$params = array($acc_i, $pseudo, $password);
 		return $this->sqlRequest($sql, $params);
 	}
 

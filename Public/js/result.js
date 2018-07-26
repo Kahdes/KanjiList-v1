@@ -5,10 +5,12 @@ var Research = {
         this.kanjiElt = $('#r-kanji');
         this.kanji = this.kanjiElt.text().trim();
         this.api = this.api + this.kanji;
-        this.buildAjax(this.api);
+        this.buildAjax(this.api);       
     },
 
     buildAjax(api) {
+        $('#r-onyomi').text('Chargement katakana...');
+        $('#r-kunyomi').text('Chargement hiragana...');
         Ajax.ajaxGet(this.api, function (answer) {
             var infos = JSON.parse(answer);
             if (infos) {
@@ -20,16 +22,16 @@ var Research = {
                     var kunHira = infoKanji['kunyomi']['hiragana'];
 
                     $('#r-onyomi').text(onKata);
-                    $('#r-kunyomi').append(kunHira);
+                    $('#r-kunyomi').text(kunHira);
                     $('#r-video').attr('href', video);
                     $('#r-video').removeClass('d-none');
                 } else {
                     $('#r-onyomi').text('...');
-                    $('#r-kunyomi').append('...');
+                    $('#r-kunyomi').text('...');
                 }
             } else {
                 $('#r-onyomi').text('...');
-                $('#r-kunyomi').append('...');
+                $('#r-kunyomi').text('...');
             }
         });
     }

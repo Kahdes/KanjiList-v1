@@ -4,9 +4,19 @@ require_once('Framework/Model.php');
 
 class Katakana extends Model {
 
-//CHECK
+	//REND TOUS LES KATAKANA
+	public function getAllKata() {
+		$sql = '
+			SELECT *
+			FROM katakana
+		';
+		return $this->sqlRequest($sql);
+	}
 
-	//TEST KATAKANA EXISTANT
+//ATTENTE
+
+	/*
+	//CHECK KATAKANA EXISTANT
 	public function checkKata($id) {
 		$sql = '
 			SELECT id
@@ -16,20 +26,33 @@ class Katakana extends Model {
 		$params = array($id);
 		return $this->check($this->sqlRequest($sql, $params));
 	}
+	*/
 
-//BASIC GET
-
-	//REND TOUS LES KATAKANA
-	public function getAllKata() {
+	/*
+	//CONDITIONNEMENT KATAKANA PAR GROUPE VOYELLE
+	public function getVowelHira($filter) {
 		$sql = '
 			SELECT *
 			FROM katakana
+			WHERE v_group = ?
 		';
-
-		return $this->sqlRequest($sql);
+		$params = array($filter);
+		return $this->sqlRequest($sql, $params);
 	}
+	*/
 
-//ATTENTE
+	/*
+	//CONDITIONNEMENT KATAKANA PAR GROUPE CONSONNE
+	public function getConsonantHira($filter) {
+		$sql = '
+			SELECT *
+			FROM katakana
+			WHERE c_group = ?
+		';
+		$params = array($filter);
+		return $this->sqlRequest($sql, $params);
+	}
+	*/
 
 	/*
 	//REND 9 HIRAGANA ALEATOIRES
@@ -40,9 +63,8 @@ class Katakana extends Model {
 			ORDER BY RAND()
 			LIMIT 9
 		';
-
 		return $this->sqlRequest($sql);
 	}
 	*/
-	
+
 }

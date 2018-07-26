@@ -4,9 +4,9 @@ require_once('Framework/Model.php');
 
 class Plist extends Model {
 
-	//TEST SI UN KANJI EXISTE
+	//CHECK COMPTE EXISTANT SELON PSEUDO
 	public function checkPseudo($pseudo) {
-		$sql = '			
+		$sql = '
 			SELECT *
 			FROM plist
 			WHERE pseudo = ?
@@ -15,9 +15,9 @@ class Plist extends Model {
 		return $this->check($this->sqlRequest($sql, $params));
 	}
 
-	//TEST SI UN KANJI EXISTE
+	//CHECK ITEM EXISTANT D'UNE LISTE PERSONELLE
 	public function checkItem($pseudo, $id_kanji) {
-		$sql = '			
+		$sql = '
 			SELECT *
 			FROM plist
 			WHERE pseudo = ?
@@ -27,10 +27,9 @@ class Plist extends Model {
 		return $this->check($this->sqlRequest($sql, $params));
 	}
 
-	//FILTERED GET 
-
+	//REND UNE LISTE PERSONNELLE
 	public function getItemList($pseudo) {
-		$sql = '			
+		$sql = '
 			SELECT *, plist.state
 			FROM kanji
 			RIGHT JOIN plist
@@ -42,7 +41,7 @@ class Plist extends Model {
 		return $this->sqlRequest($sql, $params);
 	}
 
-	//REND TOUS LES KATAKANA
+	//AJOUTE UN ITEM A UNE LISTE PERSONELLE
 	public function setItem($pseudo, $id_kanji) {
 		$sql = '
 			INSERT INTO plist (pseudo, id_kanji, state)
@@ -51,4 +50,5 @@ class Plist extends Model {
 		$params = array($pseudo, $id_kanji);
 		return $this->sqlRequest($sql, $params);
 	}
+
 }

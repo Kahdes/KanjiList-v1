@@ -4,9 +4,19 @@ require_once('Framework/Model.php');
 
 class Hiragana extends Model {
 
-//CHECK
+	//REND TOUS LES HIRAGANA
+	public function getAllHira() {
+		$sql = '
+			SELECT *
+			FROM hiragana
+		';
+		return $this->sqlRequest($sql);
+	}
 
-	//TEST HIRAGANA EXISTANT
+//ATTENTE
+
+	/*
+	//CHECK HIRAGANA EXISTANT
 	public function checkHira($id) {
 		$sql = '
 			SELECT id
@@ -16,28 +26,28 @@ class Hiragana extends Model {
 		$params = array($id);
 		return $this->check($this->sqlRequest($sql, $params));
 	}
-
-//BASIC GET
-
-	//REND TOUS LES HIRAGANA
-	public function getAllHira() {
-		$sql = '
-			SELECT *
-			FROM hiragana
-		';
-
-		return $this->sqlRequest($sql);
-	}
-
-//ATTENTE
+	*/
 
 	/*
-	//CONDITIONNEMENT PAR GROUPE VOYELLE
-	public function getFilteredHira($filter) {
+	//CONDITIONNEMENT HIRAGANA PAR GROUPE VOYELLE
+	public function getVowelHira($filter) {
 		$sql = '
 			SELECT *
 			FROM hiragana
 			WHERE v_group = ?
+		';
+		$params = array($filter);
+		return $this->sqlRequest($sql, $params);
+	}
+	*/
+
+	/*
+	//CONDITIONNEMENT HIRAGANA PAR GROUPE CONSONNE
+	public function getConsonantHira($filter) {
+		$sql = '
+			SELECT *
+			FROM hiragana
+			WHERE c_group = ?
 		';
 		$params = array($filter);
 		return $this->sqlRequest($sql, $params);
@@ -53,9 +63,8 @@ class Hiragana extends Model {
 			ORDER BY RAND()
 			LIMIT 9
 		';
-
 		return $this->sqlRequest($sql);
 	}
-	*/		
+	*/
 
 }

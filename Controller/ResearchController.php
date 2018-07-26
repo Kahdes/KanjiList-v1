@@ -4,11 +4,12 @@ require_once('Framework/Controller.php');
 require_once('Model/Kanji.php');
 require_once('Model/Plist.php');
 
+//CLASSE CONTROLEUR POUR PAGES/ACTIONS DE RECHERCHE
 class ResearchController extends Controller {
 
 	private $kanji;
 	private $pList;
-	
+
 	public function __construct() {
 		$this->kanji = new Kanji();
 		$this->pList = new Plist();
@@ -16,27 +17,33 @@ class ResearchController extends Controller {
 
 //ACTIONS
 
+	//PAGE RECHERCHE PAR DEFAUT
 	public function index() {
-		$this->generateView(array());	
+		$this->generateView(array());
 	}
 
+	//PAGE RECHERCHE PAR KANJI
 	public function kanji() {
-		$this->filter('kanji', 'research-k', 'Kanji');
+		$this->filter('kanji');
 	}
 
-	public function meaning() {
-		$this->filter('meaning', 'research-m', 'Meaning');
-	}
-
+	//PAGE RECHERCHE PAR ON'YOMI
 	public function onyomi() {
-		$this->filter('chinese', 'research-on','Onyomi');
+		$this->filter('chinese');
 	}
 
+	//PAGE RECHERCHE PAR KUN'YOMI
 	public function kunyomi() {
-		$this->filter('japanese', 'research-ku','Kunyomi');
+		$this->filter('japanese');
 	}
 
-	public function result() {	
+	//PAGE RECHERCHE PAR SIGNIFICATION
+	public function meaning() {
+		$this->filter('meaning');
+	}
+
+	//PAGE RESULTAT DE RECHERCHE / REDIRECTION
+	public function result() {
 		if ($this->request->isParameter('id')) {
 			$id = $this->request->getParameter('id');
 			if ($this->kanji->checkKanji($id)) {
@@ -56,19 +63,20 @@ class ResearchController extends Controller {
 					'account' => $account
 				));
 			} else {
-				$this->redirect('Research', 'index');			
+				$this->redirect('Research', 'index');
 			}
 		} else {
 			$this->redirect('Research', 'index');
-		}		
+		}
 	}
 
 //METHODES SPECIFIQUES
 
-	private function filter($col, $research, $method) {
+	//REND UNE LISTE DE RESULTATS SELON LE FILTRE UTILISE
+	private function filter($col) {
 		//$this->save();
-		if ($this->request->isParameter($research)) {
-			$filter = $this->request->getParameter($research);
+		if ($this->request->isParameter('research')) {
+			$filter = $this->request->getParameter('research');
 			if ($this->kanji->checkFilter($col, $filter)) {
 				$this->generateView(array(
 					'list' => $this->kanji->getFiltered($col, $filter)
@@ -80,11 +88,11 @@ class ResearchController extends Controller {
 			}
 		} else {
 			$this->generateView(array());
-		}		
+		}
 	}
 
+	//FONCTION DE SAUVEGARDE DE RECHERCHE
 	/*
-	FONCTION DE SAUVEGARDE DE RECHERCHE
 	private function save() {
 		if (!empty($_POST)) {
 			$_SESSION['save'] = $_POST;

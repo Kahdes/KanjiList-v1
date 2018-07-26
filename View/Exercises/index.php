@@ -14,7 +14,7 @@
 
 <section class="row justify-content-center pb-3" id="exercises-opt">
     <article class="col-12 col-sm-10 col-md-8">
-        <a href="Exercises/random" class="text-center text-dark">
+        <a href="Exercises/randomKanji" class="text-center text-dark">
             <div class="card bg-warning py-3 mb-3">
                 <h3 class="m-0">Kanji aléatoire</h3>
             </div>

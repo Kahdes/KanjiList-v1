@@ -9,7 +9,6 @@ var Navbar = {
 
     init() {
         if (!this.homeRegex.test(this.url)) {
-            console.log('OK');
             if (this.alphabetsRegex.test(this.url)) {
                 $('#Alphabets').addClass("active");
             } else if (this.researchRegex.test(this.url)) {

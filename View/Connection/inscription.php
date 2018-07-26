@@ -9,7 +9,7 @@
             <div class="form-group">
                 <label class="lead" for="sign-pseudo">Pseudo :</label>
                 <input class="form-control form-control-lg" type="text" name="sign-pseudo" id="sign-pseudo" maxlength="20" required />
-                <p class="alert alert-info">Le pseudo ne peut contenir que des chiffres , des lettres et _</p>
+                <p class="alert alert-info">Le pseudo ne peut contenir que des chiffres, des lettres et _</p>
             </div>
             <div class="form-group">
                 <label class="lead" for="sign-pwd">Mot de passe :</label>
