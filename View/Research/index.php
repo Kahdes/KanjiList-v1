@@ -11,28 +11,20 @@
 
 <section class="row justify-content-center pb-3" id="research-opt">
     <article class="col-12 col-sm-10 col-md-8">
-        <a href="Research/kanji" class="text-center text-dark">
-            <div class="card bg-warning py-3 mb-3">
-                <h3 class="m-0">Kanji</h3>
-            </div>
+        <a href="Research/kanji" class="btn btn-warning btn-lg w-100 py-3 mb-3">
+            <h3 class="m-0">Kanji</h3>
         </a>
 
-        <a href="Research/onyomi" class="text-center text-dark">
-            <div class="card bg-warning py-3 mb-3">
-                <h3 class="m-0">Lecture chinoise</h3>
-            </div>
+        <a href="Research/onyomi" class="btn btn-warning btn-lg w-100 py-3 mb-3">
+            <h3 class="m-0">Lecture chinoise</h3>
         </a>
 
-        <a href="Research/kunyomi" class="text-center text-dark">
-            <div class="card bg-warning py-3 mb-3">
-                <h3 class="m-0">Lecture japonaise</h3>
-            </div>
+        <a href="Research/kunyomi" class="btn btn-warning btn-lg w-100 py-3 mb-3">
+            <h3 class="m-0">Lecture japonaise</h3>
         </a>
 
-        <a href="Research/meaning" class="text-center text-dark">
-            <div class="card bg-warning py-3 m-0">
-                <h3 class="m-0">Signification</h3>
-            </div>
+        <a href="Research/meaning" class="btn btn-warning btn-lg w-100 py-3 mb-3">
+            <h3 class="m-0">Signification</h3>
         </a>
     </article>
 </section>

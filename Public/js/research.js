@@ -2,7 +2,7 @@ var Research = {
     formElt: null,
     inputElt: null,
     kanjiRegex: /^([一-龯])+$/,
-    basicRegex: /^([\wéèàùêëô]){1,}([\w\s,])*$/i,
+    basicRegex: /^([a-zA-Zéèàùêëô]){1,}([\w\s,])*$/i,
 
     init() {
         this.formElt = $('.form')[0];

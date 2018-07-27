@@ -78,8 +78,10 @@ class ResearchController extends Controller {
 		if ($this->request->isParameter('research')) {
 			$filter = $this->request->getParameter('research');
 			if ($this->kanji->checkFilter($col, $filter)) {
+				$count = $this->kanji->getCountFiltered($col, $filter)->fetch()['COUNT(*)'];
 				$this->generateView(array(
-					'list' => $this->kanji->getFiltered($col, $filter)
+					'list' => $this->kanji->getFiltered($col, $filter),
+					'count' => $count
 				));
 			} else {
 				$this->generateView(array(

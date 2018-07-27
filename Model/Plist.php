@@ -51,4 +51,28 @@ class Plist extends Model {
 		return $this->sqlRequest($sql, $params);
 	}
 
+	//REND LE STATUT DU KANJI
+	public function getPoint($pseudo, $id_kanji) {
+		$sql = '
+			SELECT state
+			FROM plist
+			WHERE pseudo = ?
+			AND id_kanji = ?
+		';
+		$params = array($pseudo, $id_kanji);
+		return $this->sqlRequest($sql, $params);
+	}
+
+	//AJOUTE UN POINT AU STATUT DU KANJI
+	public function setPoint($pseudo, $id_kanji) {
+		$sql = '
+			UPDATE plist
+			SET state = state + 1
+			WHERE pseudo = ?
+			AND id_kanji = ?
+		';
+		$params = array($pseudo, $id_kanji);
+		return $this->sqlRequest($sql, $params);
+	}
+
 }

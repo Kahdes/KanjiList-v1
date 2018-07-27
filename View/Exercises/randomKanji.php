@@ -14,6 +14,13 @@
 	<article class="col-12 col-md-8 text-center">		
 <?php
 	foreach ($question as $q) {
+		if ($q['type'] == 1) {
+			$q['type'] = "On'yomi";
+		} elseif ($q['type'] == 2) {
+			$q['type'] = "Kun'yomi";
+		} else {
+			$q['type'] = "Signification";
+		}
 ?>
 		<form action="Exercises/result/<?=$q['id_kanji'];?>" method="post">
 			<div class="card text-center text-white bg-dark">
@@ -22,6 +29,7 @@
 				</div>
 				
 				<div class="card-body">
+					<p class="lead"><?=$q['type'];?></p>
 					<div class="custom-control custom-radio custom-control-inline">
 						<input class="custom-control-input" type="radio" id="qcm-1" name="qcm-opt" value="<?=$q['r1'];?>" />
 						<label class="custom-control-label" for="qcm-1"><?=$q['r1'];?></label>

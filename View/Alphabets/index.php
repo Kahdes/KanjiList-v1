@@ -20,10 +20,8 @@
 					<img class="card-img-top" src="Public/images/hiragana.jpg" alt="Alphabet Hiragana" title="Alphabet Hiragana" />
 				</a>
                 <div class="card-body bg-dark">
-                    <a href="Alphabets/hiragana" class="text-center text-dark">
-                        <div class="card bg-warning py-3 m-0">
-                            <h3 class="m-0">Hiragana</h3>
-                        </div>
+                    <a href="Alphabets/hiragana" class="btn btn-warning btn-lg w-100 py-3">
+                        <h3 class="m-0">Hiragana</h3>
                     </a>
                 </div>
             </div>
@@ -33,10 +31,8 @@
 					<img class="card-img-top" src="Public/images/katakana.jpg" alt="Alphabet Katakana" title="Alphabet Katakana" />
 				</a>
                 <div class="card-body bg-dark">
-                    <a href="Alphabets/katakana" class="text-center text-dark">
-                        <div class="card bg-warning py-3 m-0">
-                            <h3 class="m-0">Katakana</h3>
-                        </div>
+                    <a href="Alphabets/katakana" class="btn btn-warning btn-lg w-100 py-3">
+                        <h3 class="m-0">Katakana</h3>
                     </a>
                 </div>
             </div>

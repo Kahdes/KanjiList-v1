@@ -1,7 +1,7 @@
 <?php $this->title = "Kanji List : accueil"; ?>
 <?php $this->description = "Découvrez nos solutions pour vous aider à apprendre le japonais !";?>
 
-<?php require_once('View/slider.php');?>
+<?php require_once('slider.php');?>
 
 <section class="row justify-content-center bg-dark pt-3 pb-4" id="home-title">
     <article class="col-12 text-white text-center pb-2">
@@ -10,19 +10,14 @@
         <p class="lead">Apprenez-en plus sur les différents <strong>alphabets japonais</strong> en consultant nos tableaux récapitulatifs !</p>
     </article>
 
-    <article class="col-12 col-md-5 text-center mb-4 mb-md-0">
-        <a class="alphabet-card text-dark" href="Alphabets/hiragana" title="Vers la section Hiragana">
-            <div class="card bg-warning py-3">
-                <h3 class="m-0">Hiragana</h3>
-            </div>
+    <article class="col-12 col-md-5 mb-4 mb-md-0">
+        <a href="Alphabets/hiragana" class="btn btn-warning btn-lg w-100 py-3" title="Vers la section Hiragana">
+            <h3 class="m-0">Hiragana</h3>
         </a>
     </article>
-
-    <article class="col-12 col-md-5 text-center">
-        <a class="alphabet-card text-dark" href="Alphabets/katakana" title="Vers la section Katakana">
-            <div class="card bg-warning py-3">
-                <h3 class="m-0">Katakana</h3>
-            </div>
+    <article class="col-12 col-md-5 mb-4 mb-md-0">
+        <a href="Alphabets/katakana" class="btn btn-warning btn-lg w-100 py-3" title="Vers la section Katakana">
+            <h3 class="m-0">Katakana</h3>
         </a>
     </article>
 </section>

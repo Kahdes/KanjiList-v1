@@ -7,7 +7,7 @@
 			<thead class="thead-dark text-center">
 				<tr>
 					<th colspan="3">
-						<h3 class="m-0">Correspondances</h3>
+						<h3 class="m-0">Correspondances <span class="badge badge-pill badge-light"><?=$count;?></span></h3>
 					</th>					
 				</tr>
 				<tr>
@@ -39,7 +39,7 @@
 				</td>
 			</tr>
 <?php
-		}
+	}
 ?>
 			</tbody>
 		</table>

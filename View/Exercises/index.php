@@ -6,18 +6,19 @@
         <h2 class="display-4">Exercices</h2>
         <hr/>
         <p class="lead m-0">
-            Découvrez de <strong>nouveaux kanji</strong> au travers de ces exercices et étoffez votre liste personelle.
+            Découvrez de <strong>nouveaux kanji</strong> à travers ces exercices et étoffez votre liste personelle.
             <br/>
         </p>
     </article>
 </section>
 
 <section class="row justify-content-center pb-3" id="exercises-opt">
-    <article class="col-12 col-sm-10 col-md-8">
-        <a href="Exercises/randomKanji" class="text-center text-dark">
-            <div class="card bg-warning py-3 mb-3">
-                <h3 class="m-0">Kanji aléatoire</h3>
-            </div>
+    <article class="col-12 col-sm-10 col-md-8 text-center">
+        <a href="Exercises/randomKanji" class="btn btn-warning btn-lg w-100 py-3 mb-3">
+            <h3 class="m-0">Kanji aléatoire</h3>
         </a>
+        <a href="Exercises/randomKanji" class="btn btn-warning btn-lg w-100 py-3 disabled" role="button" aria-disabled="true">
+            <h3 class="m-0">Kanji de ma liste</h3>
+        </a>        
     </article>
 </section>

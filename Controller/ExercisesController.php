@@ -27,6 +27,7 @@ class ExercisesController extends SecurityController {
 
     //PAGE EXERCICE KANJI ALEATOIRE
 	public function randomKanji() {
+		$this->request->getSession()->unsetAttribute('answer');
 		$limit = 1;
 		$this->generateView(array(
 			'question' => $this->kanjiQCM->getRandomQCM($limit)
@@ -35,22 +36,35 @@ class ExercisesController extends SecurityController {
 
     //PAGE RESULTAT EXERCICE
 	public function result() {
-		if ($this->request->isParameter('qcm-opt')) {
-			$id = $this->request->getParameter('id');
-			$answer = $this->request->getParameter('qcm-opt');
-			$result = 0;
-			if ($this->kanjiQCM->checkAnswerQCM($id, $answer)) {
-				$result = 1;
+		if (!$this->request->getSession()->isAttribute('answer')) {
+			$this->request->getSession()->setAttribute('answer', 1);
+			if ($this->request->isParameter('qcm-opt')) {
+				$pseudo = $this->info['pseudo'];				
+				$id = $this->request->getParameter('id');
+				$answer = $this->request->getParameter('qcm-opt');
+				$result = 0;
+				if ($this->kanjiQCM->checkAnswerQCM($id, $answer)) {
+					$result = 1;
+				}
+				//SI L'ITEM EST DEJA DANS LA LISTE			
+				if ($this->plist->checkItem($pseudo, $id)) {
+					$points = $this->plist->getPoint($pseudo, $id)->fetch()['state'];
+					if ($points <= '100') {
+						$this->plist->setPoint($pseudo, $id);
+					}
+				}
+				$this->generateView(array(
+					'result' => $result,
+					'kanji' => $this->kanji->getInfoKanji($id)->fetch()['kanji'],
+					'list' => $this->plist->checkItem($pseudo, $id),
+					'id' => $id
+				));
+			} else {
+				$this->redirect('Exercises', 'index');
 			}
-			$this->generateView(array(
-				'result' => $result,
-				'kanji' => $this->kanji->getInfoKanji($id)->fetch()['kanji'],
-				'list' => $this->plist->checkItem($this->pseudo, $id),
-				'id' => $id
-			));
 		} else {
 			$this->redirect('Exercises', 'index');
-		}
+		}		
 	}
 
 }

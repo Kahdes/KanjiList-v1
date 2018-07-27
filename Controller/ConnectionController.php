@@ -64,6 +64,7 @@ class ConnectionController extends Controller {
         if ($this->account->checkAccount($pseudo)) {
           	$account = $this->account->getAccount($pseudo)->fetch();
            	if (password_verify($pwd, $account['p'])) {
+           		$this->account->setLastConnection($pseudo);
            		$this->accountHome($pseudo, $pwd);
            	} else {
            		$this->redirect('Connection', 'error');

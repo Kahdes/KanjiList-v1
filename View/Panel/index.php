@@ -45,16 +45,32 @@
 				</td>
 
 				<td class="py-3" id="panel-progress">
-					<div class="progress">
+					<div class="progress bg-dark">
 <?php
-	if ($l['state'] == 0) {
+	if ($l['state'] <= 33) {
 ?>
-						<div class="progress-bar custom-danger" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">0%</div>
+						<div class="progress-bar custom-danger" id="state-1" role="progressbar" aria-valuenow="<?=$l['state'];?>" aria-valuemin="0" aria-valuemax="100">
+							<?=$l['state'];?>%
+						</div>
+<?php
+	} elseif ($l['state'] <= 66) {
+?>
+						<div class="progress-bar custom-warning" id="state-2" role="progressbar" aria-valuenow="<?=$l['state'];?>" aria-valuemin="0" aria-valuemax="100">
+							<?=$l['state'];?>%
+						</div>
+<?php
+	} elseif ($l['state'] <= 99) {
+?>
+						<div class="progress-bar custom-success" id="state-3" role="progressbar" aria-valuenow="<?=$l['state'];?>" aria-valuemin="0" aria-valuemax="100">
+							<?=$l['state'];?>%
+						</div>
 <?php
 	} else {
 ?>
-						<div class="progress-bar custom-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
-<?php
+						<div class="progress-bar custom-info" id="state-4" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+							Complété
+						</div>
+<?php		
 	}
 ?>
 					</div>

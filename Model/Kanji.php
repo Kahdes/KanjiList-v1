@@ -27,6 +27,17 @@ class Kanji extends Model {
 	}
 
 	//REND UNE LISTE DE CORRESPONDANCE SELON $col & REGEXP
+	public function getCountFiltered($col, $filter) {
+		$sql = '
+			SELECT COUNT(*)
+			FROM kanji
+			WHERE ' . $col . ' REGEXP ?
+		';
+		$params = array($filter);
+		return $this->sqlRequest($sql, $params);
+	}
+
+	//REND UNE LISTE DE CORRESPONDANCE SELON $col & REGEXP
 	public function getFiltered($col, $filter) {
 		$sql = $this->selectAllSql . '
 			WHERE ' . $col . ' REGEXP ?

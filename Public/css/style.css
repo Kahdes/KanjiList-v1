@@ -26,12 +26,29 @@ a:hover {
     text-decoration: none;
 }
 
+.custom-info {
+    background: #1cc8e3;
+}
+
 .custom-success {
     background: #5bd778;
 }
 
+.custom-warning {
+    background: #ffcc33;
+}
+
 .custom-danger {
     background: #e87d88;
+}
+
+/*---------------
+----BOOTSTRAP----
+---------------*/
+
+.btn-warning:focus,
+.btn-warning:hover {
+    background: rgb(255, 193, 7) !important;
 }
 
 /*--------------
@@ -99,7 +116,19 @@ a:hover {
     height: 30px;
 }
 
-.progress .progress-bar {
+#state-1 {
+    width: 25%;
+}
+
+#state-2 {
+    width: 50%;
+}
+
+#state-3 {
+    width: 75%;
+}
+
+#state-4 {
     width: 100%;
 }
 

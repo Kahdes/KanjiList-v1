@@ -13,6 +13,7 @@ var Research = {
         $('#r-kunyomi').text('Chargement hiragana...');
         Ajax.ajaxGet(this.api, function (answer) {
             var infos = JSON.parse(answer);
+            console.log(infos);
             if (infos) {
                 var error = infos['error'];
                 if (error == undefined) {

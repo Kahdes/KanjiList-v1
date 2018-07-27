@@ -13,6 +13,10 @@ class Session {
     public function setAttribute($name, $value) {
         $_SESSION[$name] = $value;
     }
+
+    public function unsetAttribute($name) {
+        unset($_SESSION[$name]);
+    }
     
     public function isAttribute($name) {
         return (isset($_SESSION[$name]) && $_SESSION[$name] != "");
